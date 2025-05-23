@@ -1,0 +1,4996 @@
+{
+  "relationships": [
+    {
+      "source": "CWE-1195",
+      "relationship": "member of",
+      "target": "CWE-1194",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1195",
+      "relationship": "has member",
+      "target": "CWE-1059",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1195",
+      "relationship": "has member",
+      "target": "CWE-1248",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1195",
+      "relationship": "has member",
+      "target": "CWE-1266",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1195",
+      "relationship": "has member",
+      "target": "CWE-1269",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1195",
+      "relationship": "has member",
+      "target": "CWE-1273",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1195",
+      "relationship": "has member",
+      "target": "CWE-1297",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1059",
+      "relationship": "member of",
+      "target": "CWE-1195",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1059",
+      "relationship": "member of",
+      "target": "CWE-1208",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1059",
+      "relationship": "potential resolved by",
+      "target": "CWE-1059 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1248",
+      "relationship": "member of",
+      "target": "CWE-1195",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1248",
+      "relationship": "member of",
+      "target": "CWE-1206",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1248",
+      "relationship": "member of",
+      "target": "CWE-1388",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1248",
+      "relationship": "has",
+      "target": "CWE-1248 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1248",
+      "relationship": "potential resolved by",
+      "target": "CWE-1248 Mitigation 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1248",
+      "relationship": "potential resolved by",
+      "target": "CWE-1248 Mitigation 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1266",
+      "relationship": "member of",
+      "target": "CWE-1195",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1269",
+      "relationship": "member of",
+      "target": "CWE-1195",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1269",
+      "relationship": "has",
+      "target": "CWE-1269 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1269",
+      "relationship": "potential resolved by",
+      "target": "CWE-1269 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1269",
+      "relationship": "potential resolved by",
+      "target": "CWE-1269 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1269",
+      "relationship": "potential resolved by",
+      "target": "CWE-1269 Mitigation3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1273",
+      "relationship": "member of",
+      "target": "CWE-1195",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1273",
+      "relationship": "has",
+      "target": "CWE-1273 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1273",
+      "relationship": "potential resolved by",
+      "target": "CWE-1273 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1273",
+      "relationship": "potential resolved by",
+      "target": "CWE-1273 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1297",
+      "relationship": "member of",
+      "target": "CWE-1195",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1297",
+      "relationship": "has",
+      "target": "CWE-1297 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1297",
+      "relationship": "potential resolved by",
+      "target": "CWE-1297 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1196",
+      "relationship": "member of",
+      "target": "CWE-1194",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1194",
+      "relationship": "hasmember",
+      "target": "CWE-1190",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1194",
+      "relationship": "hasmember",
+      "target": "CWE-1193",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1194",
+      "relationship": "hasmember",
+      "target": "CWE-1264",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1194",
+      "relationship": "hasmember",
+      "target": "CWE-1274",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1194",
+      "relationship": "hasmember",
+      "target": "CWE-1283",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1194",
+      "relationship": "hasmember",
+      "target": "CWE-1310",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1194",
+      "relationship": "hasmember",
+      "target": "CWE-1326",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1194",
+      "relationship": "hasmember",
+      "target": "CWE-1328",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1190",
+      "relationship": "member of",
+      "target": "CWE-1196",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1190",
+      "relationship": "potential resolved by",
+      "target": "CWE-1190 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1190",
+      "relationship": "has",
+      "target": "CWE-1190 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1193",
+      "relationship": "member of",
+      "target": "CWE-1196",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1264",
+      "relationship": "member of",
+      "target": "CWE-1196",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1264",
+      "relationship": "has",
+      "target": "CWE-1264 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1264",
+      "relationship": "potential resolved by",
+      "target": "CWE-1264 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1274",
+      "relationship": "member of",
+      "target": "CWE-1196",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1274",
+      "relationship": "has",
+      "target": "CWE-1274 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1274",
+      "relationship": "potential resolved by",
+      "target": "CWE-1274 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1274",
+      "relationship": "potential resolved by",
+      "target": "CWE-1274 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1283",
+      "relationship": "member of",
+      "target": "CWE-1196",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1283",
+      "relationship": "has",
+      "target": "CWE-1283 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1283",
+      "relationship": "potential resolved by",
+      "target": "CWE-1283 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1310",
+      "relationship": "member of",
+      "target": "CWE-1196",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1310",
+      "relationship": "has",
+      "target": "CWE-1310 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1310",
+      "relationship": "has",
+      "target": "CWE-1310 Example 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1310",
+      "relationship": "potential resolved by",
+      "target": "CWE-1310 Mitigation 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1310",
+      "relationship": "potential resolved by",
+      "target": "CWE-1310 Mitigation 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1326",
+      "relationship": "member of",
+      "target": "CWE-1196",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1326",
+      "relationship": "has",
+      "target": "CWE-1326 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1326",
+      "relationship": "potential resolved by",
+      "target": "CWE-1326 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1326",
+      "relationship": "potential resolved by",
+      "target": "CWE-1326 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1328",
+      "relationship": "member of",
+      "target": "CWE-1196",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1328",
+      "relationship": "has",
+      "target": "CWE-1328 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1328",
+      "relationship": "potential resolved by",
+      "target": "CWE-1328 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1328",
+      "relationship": "potential resolved by",
+      "target": "CWE-1328 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1197",
+      "relationship": "member of",
+      "target": "CWE-1194",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1194",
+      "relationship": "hasmember",
+      "target": "CWE-1276",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1276",
+      "relationship": "member of",
+      "target": "CWE-1197",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1276",
+      "relationship": "has",
+      "target": "CWE-1276 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1276",
+      "relationship": "has",
+      "target": "CWE-1276 Example 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1276",
+      "relationship": "potential resolved by",
+      "target": "CWE-1276 Mitigation",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1198",
+      "relationship": "memberof",
+      "target": "CWE-1194",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1198",
+      "relationship": "memberof",
+      "target": "CWE-1372",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1198",
+      "relationship": "hasmember",
+      "target": "CWE-276",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1198",
+      "relationship": "hasmember",
+      "target": "CWE-441",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1198",
+      "relationship": "hasmember",
+      "target": "CWE-1189",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1198",
+      "relationship": "hasmember",
+      "target": "CWE-1192",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1198",
+      "relationship": "hasmember",
+      "target": "CWE-1220",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1198",
+      "relationship": "hasmember",
+      "target": "CWE-1222",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1198",
+      "relationship": "hasmember",
+      "target": "CWE-1242",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1198",
+      "relationship": "hasmember",
+      "target": "CWE-1260",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1198",
+      "relationship": "hasmember",
+      "target": "CWE-1262",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1198",
+      "relationship": "hasmember",
+      "target": "CWE-1267",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1198",
+      "relationship": "hasmember",
+      "target": "CWE-1268",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1198",
+      "relationship": "hasmember",
+      "target": "CWE-1280",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1198",
+      "relationship": "hasmember",
+      "target": "CWE-1294",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1198",
+      "relationship": "hasmember",
+      "target": "CWE-1299",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1198",
+      "relationship": "hasmember",
+      "target": "CWE-1302",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1198",
+      "relationship": "hasmember",
+      "target": "CWE-1303",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1198",
+      "relationship": "hasmember",
+      "target": "CWE-1314",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1198",
+      "relationship": "hasmember",
+      "target": "CWE-1318",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1198",
+      "relationship": "hasmember",
+      "target": "CWE-1334",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1198",
+      "relationship": "hasmember",
+      "target": "CWE-1420",
+      "properties": {}
+    },
+    {
+      "source": "CWE-276",
+      "relationship": "member of",
+      "target": "CWE-1198",
+      "properties": {}
+    },
+    {
+      "source": "CWE-441",
+      "relationship": "member of",
+      "target": "CWE-1198",
+      "properties": {}
+    },
+    {
+      "source": "CWE-441",
+      "relationship": "has",
+      "target": "CWE-441 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-441",
+      "relationship": "potential resolved by",
+      "target": "CWE-441 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-441",
+      "relationship": "potential resolved by",
+      "target": "CWE-441 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1189",
+      "relationship": "member of",
+      "target": "CWE-1198",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1189",
+      "relationship": "peer of",
+      "target": "CWE-1331",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1189",
+      "relationship": "has",
+      "target": "CWE-1189 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1189",
+      "relationship": "potential resolved by",
+      "target": "CWE-1189 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1192",
+      "relationship": "member of",
+      "target": "CWE-1198",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1220",
+      "relationship": "member of",
+      "target": "CWE-1198",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1220",
+      "relationship": "has",
+      "target": "CWE-1220 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1220",
+      "relationship": "potential resolved by",
+      "target": "CWE-1220 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1222",
+      "relationship": "member of",
+      "target": "CWE-1198",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1222",
+      "relationship": "has",
+      "target": "CWE-1222 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1222",
+      "relationship": "potential resolved by",
+      "target": "CWE-1222 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1242",
+      "relationship": "member of",
+      "target": "CWE-1198",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1242",
+      "relationship": "has",
+      "target": "CWE-1242 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1242",
+      "relationship": "potential resolved by",
+      "target": "CWE-1242 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1260",
+      "relationship": "member of",
+      "target": "CWE-1198",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1260",
+      "relationship": "has",
+      "target": "CWE-1260 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1260",
+      "relationship": "has",
+      "target": "CWE-1260 Example 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1260",
+      "relationship": "potential resolved by",
+      "target": "CWE-1260 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1260",
+      "relationship": "potential resolved by",
+      "target": "CWE-1260 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1262",
+      "relationship": "member of",
+      "target": "CWE-1198",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1262",
+      "relationship": "has",
+      "target": "CWE-1262 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1262",
+      "relationship": "potential resolved by",
+      "target": "CWE-1262 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1262",
+      "relationship": "potential resolved by",
+      "target": "CWE-1262 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1267",
+      "relationship": "member of",
+      "target": "CWE-1198",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1267",
+      "relationship": "has",
+      "target": "CWE-1267 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1267",
+      "relationship": "potential resolved by",
+      "target": "CWE-1267 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1268",
+      "relationship": "member of",
+      "target": "CWE-1198",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1268",
+      "relationship": "has",
+      "target": "CWE-1268 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1268",
+      "relationship": "potential resolved by",
+      "target": "CWE-1268 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1280",
+      "relationship": "member of",
+      "target": "CWE-1198",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1280",
+      "relationship": "has",
+      "target": "CWE-1280 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1280",
+      "relationship": "potential resolved by",
+      "target": "CWE-1280 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1294",
+      "relationship": "member of",
+      "target": "CWE-1198",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1294",
+      "relationship": "parent of",
+      "target": "CWE-1259",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1294",
+      "relationship": "parent of",
+      "target": "CWE-1270",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1294",
+      "relationship": "parent of",
+      "target": "CWE-1290",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1294",
+      "relationship": "parent of",
+      "target": "CWE-1292",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1294",
+      "relationship": "potential resolved by",
+      "target": "CWE-1294 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1294",
+      "relationship": "potential resolved by",
+      "target": "CWE-1294 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1294",
+      "relationship": "has",
+      "target": "CWE-1294 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1259",
+      "relationship": "childof",
+      "target": "CWE-1294",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1259",
+      "relationship": "peerof",
+      "target": "CWE-1255",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1259",
+      "relationship": "has",
+      "target": "CWE-1259 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1259",
+      "relationship": "potential resolved by",
+      "target": "CWE-1259 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1270",
+      "relationship": "childof",
+      "target": "CWE-1294",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1270",
+      "relationship": "has",
+      "target": "CWE-1270 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1270",
+      "relationship": "potential resolved by",
+      "target": "CWE-1270 Mitigation 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1290",
+      "relationship": "childof",
+      "target": "CWE-1294",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1290",
+      "relationship": "has",
+      "target": "CWE-1290 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1290",
+      "relationship": "potential resolved by",
+      "target": "CWE-1290 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1290",
+      "relationship": "potential resolved by",
+      "target": "CWE-1290 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1292",
+      "relationship": "childof",
+      "target": "CWE-1294",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1292",
+      "relationship": "potential resolved by",
+      "target": "CWE-1292 Mitigation 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1292",
+      "relationship": "potential resolved by",
+      "target": "CWE-1292 Mitigation 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1292",
+      "relationship": "has",
+      "target": "CWE-1292 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1299",
+      "relationship": "member of",
+      "target": "CWE-1198",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1299",
+      "relationship": "peer of",
+      "target": "CWE-1191",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1299",
+      "relationship": "peer of",
+      "target": "CWE-1314",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1299",
+      "relationship": "has",
+      "target": "CWE-1299 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1299",
+      "relationship": "potential resolved by",
+      "target": "CWE-1299 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1299",
+      "relationship": "potential resolved by",
+      "target": "CWE-1299 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1299",
+      "relationship": "potential resolved by",
+      "target": "CWE-1299 Mitigation3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1303",
+      "relationship": "member of",
+      "target": "CWE-1198",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1303",
+      "relationship": "has",
+      "target": "CWE-1303 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1303",
+      "relationship": "potential resolved by",
+      "target": "CWE-1303 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1303",
+      "relationship": "potential resolved by",
+      "target": "CWE-1303 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1314",
+      "relationship": "member of",
+      "target": "CWE-1198",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1314",
+      "relationship": "member of",
+      "target": "CWE-1206",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1314",
+      "relationship": "peer of",
+      "target": "CWE-1299",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1314",
+      "relationship": "has",
+      "target": "CWE-1314 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1314",
+      "relationship": "potential resolved by",
+      "target": "CWE-1314 Mitigation 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1318",
+      "relationship": "member of",
+      "target": "CWE-1198",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1318",
+      "relationship": "has",
+      "target": "CWE-1318 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1318",
+      "relationship": "has",
+      "target": "CWE-1318 Example 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1318",
+      "relationship": "potential resolved by",
+      "target": "CWE-1318 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1334",
+      "relationship": "member of",
+      "target": "CWE-1198",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "member of",
+      "target": "CWE-1198",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "member of",
+      "target": "CWE-1201",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "member of",
+      "target": "CWE-1202",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "child of",
+      "target": "CWE-1421",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "child of",
+      "target": "CWE-1422",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "child of",
+      "target": "CWE-1423",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "has",
+      "target": "CWE-1420 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "has",
+      "target": "CWE-1420 Example 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation4",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation5",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation6",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation7",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation8",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation9",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation10",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation11",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "has",
+      "target": "CWE-203",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "has",
+      "target": "CWE-1421",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "has",
+      "target": "CWE-1422",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "has",
+      "target": "CWE-1423",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "child of",
+      "target": "CWE-1420",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "has",
+      "target": "CWE-1421 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "has",
+      "target": "CWE-1421 Example 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "has",
+      "target": "CWE-1421 Example 3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation4",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation5",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation6",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation7",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation8",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation9",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation10",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation11",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation12",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation13",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "childof",
+      "target": "CWE-1420",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "has",
+      "target": "CWE-1422 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "has",
+      "target": "CWE-1422 Example 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 4",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 5",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 6",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 7",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 8",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 9",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 10",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "childof",
+      "target": "CWE-1420",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "has",
+      "target": "CWE-1423 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "has",
+      "target": "CWE-1423 Example 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 4",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 5",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 6",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 7",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 8",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 9",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 10",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 11",
+      "properties": {}
+    },
+    {
+      "source": "CWE-203",
+      "relationship": "peerof",
+      "target": "CWE-1423",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1199",
+      "relationship": "memberof",
+      "target": "CWE-1194",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1199",
+      "relationship": "hasmember",
+      "target": "CWE-1209",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1199",
+      "relationship": "hasmember",
+      "target": "CWE-1221",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1199",
+      "relationship": "hasmember",
+      "target": "CWE-1223",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1199",
+      "relationship": "hasmember",
+      "target": "CWE-1224",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1199",
+      "relationship": "hasmember",
+      "target": "CWE-1231",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1199",
+      "relationship": "hasmember",
+      "target": "CWE-1232",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1199",
+      "relationship": "hasmember",
+      "target": "CWE-1233",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1199",
+      "relationship": "hasmember",
+      "target": "CWE-1234",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1199",
+      "relationship": "hasmember",
+      "target": "CWE-1245",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1199",
+      "relationship": "hasmember",
+      "target": "CWE-1250",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1199",
+      "relationship": "hasmember",
+      "target": "CWE-1253",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1199",
+      "relationship": "hasmember",
+      "target": "CWE-1254",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1199",
+      "relationship": "hasmember",
+      "target": "CWE-1261",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1199",
+      "relationship": "hasmember",
+      "target": "CWE-1298",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1209",
+      "relationship": "member of",
+      "target": "CWE-1199",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1209",
+      "relationship": "has",
+      "target": "CWE-1209 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1209",
+      "relationship": "potential resolved by",
+      "target": "CWE-1209 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1209",
+      "relationship": "potential resolved by",
+      "target": "CWE-1209 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1221",
+      "relationship": "member of",
+      "target": "CWE-1199",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1221",
+      "relationship": "has",
+      "target": "CWE-1221 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1221",
+      "relationship": "potential resolved by",
+      "target": "CWE-1221 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1221",
+      "relationship": "potential resolved by",
+      "target": "CWE-1221 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1221",
+      "relationship": "potential resolved by",
+      "target": "CWE-1221 Mitigation3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1223",
+      "relationship": "member of",
+      "target": "CWE-1199",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1223",
+      "relationship": "has",
+      "target": "CWE-1223 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1223",
+      "relationship": "potential resolved by",
+      "target": "CWE-1223 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1223",
+      "relationship": "potential resolved by",
+      "target": "CWE-1223 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1224",
+      "relationship": "member of",
+      "target": "CWE-1199",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1224",
+      "relationship": "has",
+      "target": "CWE-1224 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1224",
+      "relationship": "potential resolved by",
+      "target": "CWE-1224 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1224",
+      "relationship": "potential resolved by",
+      "target": "CWE-1224 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1231",
+      "relationship": "member of",
+      "target": "CWE-1199",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1231",
+      "relationship": "has",
+      "target": "CWE-1231 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1231",
+      "relationship": "potential resolved by",
+      "target": "CWE-1231 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1232",
+      "relationship": "member of",
+      "target": "CWE-1199",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1232",
+      "relationship": "member of",
+      "target": "CWE-1206",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1232",
+      "relationship": "has",
+      "target": "CWE-1232 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1232",
+      "relationship": "potential resolved by",
+      "target": "CWE-1232 Mitigation",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1233",
+      "relationship": "member of",
+      "target": "CWE-1199",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1233",
+      "relationship": "has",
+      "target": "CWE-1233 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1233",
+      "relationship": "potential resolved by",
+      "target": "CWE-1233 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1234",
+      "relationship": "member of",
+      "target": "CWE-1199",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1234",
+      "relationship": "member of",
+      "target": "CWE-1207",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1234",
+      "relationship": "has",
+      "target": "CWE-1234 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1234",
+      "relationship": "potential resolved by",
+      "target": "CWE-1234 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1245",
+      "relationship": "member of",
+      "target": "CWE-1199",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1245",
+      "relationship": "has",
+      "target": "CWE-1245 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1245",
+      "relationship": "potential resolved by",
+      "target": "CWE-1245 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1250",
+      "relationship": "member of",
+      "target": "CWE-1199",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1250",
+      "relationship": "has",
+      "target": "CWE-1250 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1253",
+      "relationship": "member of",
+      "target": "CWE-1199",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1253",
+      "relationship": "has",
+      "target": "CWE-1253 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1253",
+      "relationship": "potential resolved by",
+      "target": "CWE-1253 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1254",
+      "relationship": "member of",
+      "target": "CWE-1199",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1254",
+      "relationship": "potential resolved by",
+      "target": "CWE-1254 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1261",
+      "relationship": "member of",
+      "target": "CWE-1199",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1261",
+      "relationship": "member of",
+      "target": "CWE-1388",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1261",
+      "relationship": "has",
+      "target": "CWE-1261 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1261",
+      "relationship": "has",
+      "target": "CWE-1261 Example 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1261",
+      "relationship": "potential resolved by",
+      "target": "CWE-1261 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1261",
+      "relationship": "potential resolved by",
+      "target": "CWE-1261 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1298",
+      "relationship": "member of",
+      "target": "CWE-1199",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1298",
+      "relationship": "has",
+      "target": "CWE-1298 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1298",
+      "relationship": "potential resolved by",
+      "target": "CWE-1298 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1298",
+      "relationship": "potential resolved by",
+      "target": "CWE-1298 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1201",
+      "relationship": "member of",
+      "target": "CWE-1194",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1201",
+      "relationship": "hasmember",
+      "target": "CWE-1252",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1201",
+      "relationship": "hasmember",
+      "target": "CWE-1281",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1201",
+      "relationship": "hasmember",
+      "target": "CWE-1342",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1201",
+      "relationship": "hasmember",
+      "target": "CWE-1420",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1252",
+      "relationship": "member of",
+      "target": "CWE-1201",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1252",
+      "relationship": "has",
+      "target": "CWE-1252 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1252",
+      "relationship": "potential resolved by",
+      "target": "CWE-1252 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1252",
+      "relationship": "potential resolved by",
+      "target": "CWE-1252 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1281",
+      "relationship": "member of",
+      "target": "CWE-1201",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1281",
+      "relationship": "has",
+      "target": "CWE-1281 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1281",
+      "relationship": "potential resolved by",
+      "target": "CWE-1281 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1281",
+      "relationship": "potential resolved by",
+      "target": "CWE-1281 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1342",
+      "relationship": "member of",
+      "target": "CWE-1201",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1342",
+      "relationship": "child of",
+      "target": "CWE-226",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1342",
+      "relationship": "has",
+      "target": "CWE-1342 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1342",
+      "relationship": "potential resolved by",
+      "target": "CWE-1342 Mitigation 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1342",
+      "relationship": "potential resolved by",
+      "target": "CWE-1342 Mitigation 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "member of",
+      "target": "CWE-1198",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "member of",
+      "target": "CWE-1201",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "member of",
+      "target": "CWE-1202",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "child of",
+      "target": "CWE-1421",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "child of",
+      "target": "CWE-1422",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "child of",
+      "target": "CWE-1423",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "has",
+      "target": "CWE-1420 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "has",
+      "target": "CWE-1420 Example 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation 3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation 4",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation 5",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation 6",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation 7",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation 8",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation 9",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation 10",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation 11",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "peer of",
+      "target": "CWE-203",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "child of",
+      "target": "CWE-1420",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "child of",
+      "target": "CWE-1420",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "child of",
+      "target": "CWE-1420",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "child of",
+      "target": "CWE-1420",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation4",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation5",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation6",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation7",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation8",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation9",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation10",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation11",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation12",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation13",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "has",
+      "target": "CWE-1400",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "has",
+      "target": "CWE-226",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "has",
+      "target": "CWE-1405",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "has",
+      "target": "CWE-1408",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "has",
+      "target": "CWE-1410",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "has",
+      "target": "CWE-1411",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "childof",
+      "target": "CWE-1420",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "has",
+      "target": "CWE-1422 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "has",
+      "target": "CWE-1422 Example 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 4",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 5",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 6",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 7",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 8",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 9",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 10",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "childof",
+      "target": "CWE-1420",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "has",
+      "target": "CWE-203",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 4",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 5",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 6",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 7",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 8",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 9",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 10",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 11",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "has",
+      "target": "CWE-1423 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "has",
+      "target": "CWE-1423 Example 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1202",
+      "relationship": "member of",
+      "target": "CWE-1194",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1202",
+      "relationship": "hasmember",
+      "target": "CWE-226",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1202",
+      "relationship": "hasmember",
+      "target": "CWE-1246",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1202",
+      "relationship": "hasmember",
+      "target": "CWE-1251",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1202",
+      "relationship": "hasmember",
+      "target": "CWE-1257",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1202",
+      "relationship": "hasmember",
+      "target": "CWE-1282",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1202",
+      "relationship": "hasmember",
+      "target": "CWE-1420",
+      "properties": {}
+    },
+    {
+      "source": "CWE-226",
+      "relationship": "memberof",
+      "target": "CWE-1202",
+      "properties": {}
+    },
+    {
+      "source": "CWE-226",
+      "relationship": "parentof",
+      "target": "CWE-1239",
+      "properties": {}
+    },
+    {
+      "source": "CWE-226",
+      "relationship": "parentof",
+      "target": "CWE-1342",
+      "properties": {}
+    },
+    {
+      "source": "CWE-226",
+      "relationship": "has",
+      "target": "CWE-226 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-226",
+      "relationship": "potential resolved by",
+      "target": "CWE-226 Mitigation 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1239",
+      "relationship": "childof",
+      "target": "CWE-226",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1239",
+      "relationship": "has",
+      "target": "CWE-1239 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1239",
+      "relationship": "potential resolved by",
+      "target": "CWE-1239 Mitigation",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1342",
+      "relationship": "member of",
+      "target": "CWE-1201",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1342",
+      "relationship": "child of",
+      "target": "CWE-226",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1342",
+      "relationship": "has",
+      "target": "CWE-1342 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1342",
+      "relationship": "potential resolved by",
+      "target": "CWE-1342 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1342",
+      "relationship": "potential resolved by",
+      "target": "CWE-1342 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1246",
+      "relationship": "member of",
+      "target": "CWE-1202",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1246",
+      "relationship": "has",
+      "target": "CWE-1246 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1246",
+      "relationship": "potential resolved by",
+      "target": "CWE-1246 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1251",
+      "relationship": "member of",
+      "target": "CWE-1202",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1251",
+      "relationship": "peer of",
+      "target": "CWE-1312",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1251",
+      "relationship": "has",
+      "target": "CWE-1251 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1251",
+      "relationship": "potential resolved by",
+      "target": "CWE-1251 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1257",
+      "relationship": "member of",
+      "target": "CWE-1202",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1257",
+      "relationship": "has",
+      "target": "CWE-1257 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1257",
+      "relationship": "has",
+      "target": "CWE-1257 Example 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1257",
+      "relationship": "potential resolved by",
+      "target": "CWE-1257 Mitigation 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1257",
+      "relationship": "potential resolved by",
+      "target": "CWE-1257 Mitigation 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1282",
+      "relationship": "member of",
+      "target": "CWE-1202",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1282",
+      "relationship": "has",
+      "target": "CWE-1282 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1282",
+      "relationship": "potential resolved by",
+      "target": "CWE-1282 Mitigation 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "member of",
+      "target": "CWE-1198",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "member of",
+      "target": "CWE-1201",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "member of",
+      "target": "CWE-1202",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "child of",
+      "target": "CWE-1421",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "child of",
+      "target": "CWE-1422",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "child of",
+      "target": "CWE-1423",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "has",
+      "target": "CWE-1420 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "has",
+      "target": "CWE-1420 Example 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation4",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation5",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation6",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation7",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation8",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation9",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation10",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1420",
+      "relationship": "potential resolved by",
+      "target": "CWE-1420 Mitigation11",
+      "properties": {}
+    },
+    {
+      "source": "CWE-203",
+      "relationship": "child of",
+      "target": "CWE-1420",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "parent of",
+      "target": "CWE-1420",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "parent of",
+      "target": "CWE-1420",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "parent of",
+      "target": "CWE-1420",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "childof",
+      "target": "CWE-1420",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "has",
+      "target": "CWE-1421 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "has",
+      "target": "CWE-1421 Example 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "has",
+      "target": "CWE-1421 Example 3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation 3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation 4",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation 5",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation 6",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation 7",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation 8",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation 9",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation 10",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation 11",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation 12",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "potential resolved by",
+      "target": "CWE-1421 Mitigation 13",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "peerof",
+      "target": "CWE-1400",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1421",
+      "relationship": "peerof",
+      "target": "CWE-226",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "child of",
+      "target": "CWE-1420",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "has",
+      "target": "CWE-1422 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "has",
+      "target": "CWE-1422 Example 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 4",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 5",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 6",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 7",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 8",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 9",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1422",
+      "relationship": "potential resolved by",
+      "target": "CWE-1422 Mitigation 10",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "childof",
+      "target": "CWE-1420",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "has",
+      "target": "CWE-203",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 4",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 5",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 6",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 7",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 8",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 9",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 10",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "potential resolved by",
+      "target": "CWE-1423 Mitigation 11",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "has",
+      "target": "CWE-1423 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1423",
+      "relationship": "has",
+      "target": "CWE-1423 Example 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1203",
+      "relationship": "member of",
+      "target": "CWE-1194",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1203",
+      "relationship": "hasmember",
+      "target": "CWE-1311",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1203",
+      "relationship": "hasmember",
+      "target": "CWE-1312",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1203",
+      "relationship": "hasmember",
+      "target": "CWE-1315",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1203",
+      "relationship": "hasmember",
+      "target": "CWE-1316",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1203",
+      "relationship": "hasmember",
+      "target": "CWE-1317",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1203",
+      "relationship": "hasmember",
+      "target": "CWE-1331",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1311",
+      "relationship": "member of",
+      "target": "CWE-1203",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1311",
+      "relationship": "has",
+      "target": "CWE-1311 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1311",
+      "relationship": "potential resolved by",
+      "target": "CWE-1311 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1312",
+      "relationship": "member of",
+      "target": "CWE-1203",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1312",
+      "relationship": "peer of",
+      "target": "CWE-1251",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1312",
+      "relationship": "has",
+      "target": "CWE-1312 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1312",
+      "relationship": "potential resolved by",
+      "target": "CWE-1312 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1312",
+      "relationship": "potential resolved by",
+      "target": "CWE-1312 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1315",
+      "relationship": "member of",
+      "target": "CWE-1203",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1315",
+      "relationship": "has",
+      "target": "CWE-1315 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1315",
+      "relationship": "potential resolved by",
+      "target": "CWE-1315 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1315",
+      "relationship": "potential resolved by",
+      "target": "CWE-1315 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1315",
+      "relationship": "potential resolved by",
+      "target": "CWE-1315 Mitigation3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1316",
+      "relationship": "memberof",
+      "target": "CWE-1203",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1316",
+      "relationship": "has",
+      "target": "CWE-1316 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1316",
+      "relationship": "potential resolved by",
+      "target": "CWE-1316 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1316",
+      "relationship": "potential resolved by",
+      "target": "CWE-1316 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1316",
+      "relationship": "potential resolved by",
+      "target": "CWE-1316 Mitigation3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1317",
+      "relationship": "member of",
+      "target": "CWE-1203",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1317",
+      "relationship": "has",
+      "target": "CWE-1317 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1317",
+      "relationship": "has",
+      "target": "CWE-1317 Example 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1317",
+      "relationship": "potential resolved by",
+      "target": "CWE-1317 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1317",
+      "relationship": "potential resolved by",
+      "target": "CWE-1317 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1331",
+      "relationship": "member of",
+      "target": "CWE-1203",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1331",
+      "relationship": "peer of",
+      "target": "CWE-1189",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1331",
+      "relationship": "has",
+      "target": "CWE-1331 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1331",
+      "relationship": "potential resolved by",
+      "target": "CWE-1331 Mitigation",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1205",
+      "relationship": "member of",
+      "target": "CWE-1194",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1205",
+      "relationship": "hasmember",
+      "target": "CWE-203",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1205",
+      "relationship": "hasmember",
+      "target": "CWE-325",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1205",
+      "relationship": "hasmember",
+      "target": "CWE-1240",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1205",
+      "relationship": "hasmember",
+      "target": "CWE-1241",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1205",
+      "relationship": "hasmember",
+      "target": "CWE-1279",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1205",
+      "relationship": "hasmember",
+      "target": "CWE-1351",
+      "properties": {}
+    },
+    {
+      "source": "CWE-203",
+      "relationship": "member of",
+      "target": "CWE-1205",
+      "properties": {}
+    },
+    {
+      "source": "CWE-203",
+      "relationship": "child of",
+      "target": "CWE-1300",
+      "properties": {}
+    },
+    {
+      "source": "CWE-203",
+      "relationship": "has",
+      "target": "CWE-203 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-203",
+      "relationship": "has",
+      "target": "CWE-203 Example 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-203",
+      "relationship": "has",
+      "target": "CWE-203 Example 3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-203",
+      "relationship": "has",
+      "target": "CWE-203 Example 4",
+      "properties": {}
+    },
+    {
+      "source": "CWE-203",
+      "relationship": "potential resolved by",
+      "target": "CWE-203 Mitigation 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-203",
+      "relationship": "potential resolved by",
+      "target": "CWE-203 Mitigation 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1300",
+      "relationship": "member of",
+      "target": "CWE-1388",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1300",
+      "relationship": "child of",
+      "target": "CWE-203",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1300",
+      "relationship": "has",
+      "target": "CWE-1300 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1300",
+      "relationship": "potential resolved by",
+      "target": "CWE-1300 Mitigation 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1300",
+      "relationship": "potential resolved by",
+      "target": "CWE-1300 Mitigation 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1240",
+      "relationship": "member of",
+      "target": "CWE-1205",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1240",
+      "relationship": "has",
+      "target": "CWE-1240 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1240",
+      "relationship": "potential resolved by",
+      "target": "CWE-1240 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1240",
+      "relationship": "potential resolved by",
+      "target": "CWE-1240 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1240",
+      "relationship": "potential resolved by",
+      "target": "CWE-1240 Mitigation3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1240",
+      "relationship": "potential resolved by",
+      "target": "CWE-1240 Mitigation4",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1240",
+      "relationship": "potential resolved by",
+      "target": "CWE-1240 Mitigation5",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1240",
+      "relationship": "potential resolved by",
+      "target": "CWE-1240 Mitigation6",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1240",
+      "relationship": "potential resolved by",
+      "target": "CWE-1240 Mitigation7",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1240",
+      "relationship": "potential resolved by",
+      "target": "CWE-1240 Mitigation8",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1240",
+      "relationship": "potential resolved by",
+      "target": "CWE-1240 Mitigation9",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1240",
+      "relationship": "potential resolved by",
+      "target": "CWE-1240 Mitigation10",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1240",
+      "relationship": "potential resolved by",
+      "target": "CWE-1240 Mitigation11",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1240",
+      "relationship": "member of",
+      "target": "CWE-1205",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1240",
+      "relationship": "has",
+      "target": "CWE-1240 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1240",
+      "relationship": "potential resolved by",
+      "target": "CWE-1240 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1240",
+      "relationship": "potential resolved by",
+      "target": "CWE-1240 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1240",
+      "relationship": "potential resolved by",
+      "target": "CWE-1240 Mitigation3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1240",
+      "relationship": "potential resolved by",
+      "target": "CWE-1240 Mitigation4",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1240",
+      "relationship": "potential resolved by",
+      "target": "CWE-1240 Mitigation5",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1240",
+      "relationship": "potential resolved by",
+      "target": "CWE-1240 Mitigation6",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1240",
+      "relationship": "potential resolved by",
+      "target": "CWE-1240 Mitigation7",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1240",
+      "relationship": "potential resolved by",
+      "target": "CWE-1240 Mitigation8",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1240",
+      "relationship": "potential resolved by",
+      "target": "CWE-1240 Mitigation9",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1240",
+      "relationship": "potential resolved by",
+      "target": "CWE-1240 Mitigation10",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1240",
+      "relationship": "potential resolved by",
+      "target": "CWE-1240 Mitigation11",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1240",
+      "relationship": "has",
+      "target": "CWE-325",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1240",
+      "relationship": "has",
+      "target": "CWE-320",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1241",
+      "relationship": "member of",
+      "target": "CWE-1205",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1241",
+      "relationship": "has",
+      "target": "CWE-1241 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1241",
+      "relationship": "has",
+      "target": "CWE-1241 Example 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1241",
+      "relationship": "potential resolved by",
+      "target": "CWE-1241 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1241",
+      "relationship": "potential resolved by",
+      "target": "CWE-1241 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1279",
+      "relationship": "member of",
+      "target": "CWE-1205",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1279",
+      "relationship": "has",
+      "target": "CWE-1279 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1279",
+      "relationship": "has",
+      "target": "CWE-1279 Example 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1279",
+      "relationship": "potential resolved by",
+      "target": "CWE-1279 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1279",
+      "relationship": "potential resolved by",
+      "target": "CWE-1279 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1351",
+      "relationship": "member of",
+      "target": "CWE-1205",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1351",
+      "relationship": "member of",
+      "target": "CWE-1388",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1351",
+      "relationship": "has",
+      "target": "CWE-1351 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1351",
+      "relationship": "potential resolved by",
+      "target": "CWE-1351 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1206",
+      "relationship": "member of",
+      "target": "CWE-1194",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1206",
+      "relationship": "hasmember",
+      "target": "CWE-1232",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1206",
+      "relationship": "hasmember",
+      "target": "CWE-1247",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1206",
+      "relationship": "hasmember",
+      "target": "CWE-1248",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1206",
+      "relationship": "hasmember",
+      "target": "CWE-1255",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1206",
+      "relationship": "hasmember",
+      "target": "CWE-1256",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1206",
+      "relationship": "hasmember",
+      "target": "CWE-1271",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1206",
+      "relationship": "hasmember",
+      "target": "CWE-1304",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1206",
+      "relationship": "hasmember",
+      "target": "CWE-1314",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1206",
+      "relationship": "hasmember",
+      "target": "CWE-1320",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1206",
+      "relationship": "hasmember",
+      "target": "CWE-1332",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1206",
+      "relationship": "hasmember",
+      "target": "CWE-1338",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1232",
+      "relationship": "member of",
+      "target": "CWE-1199",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1232",
+      "relationship": "member of",
+      "target": "CWE-1206",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1232",
+      "relationship": "has",
+      "target": "CWE-1232 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1232",
+      "relationship": "potential resolved by",
+      "target": "CWE-1232 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1247",
+      "relationship": "member of",
+      "target": "CWE-1206",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1247",
+      "relationship": "member of",
+      "target": "CWE-1388",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1247",
+      "relationship": "peer of",
+      "target": "CWE-1332",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1247",
+      "relationship": "has",
+      "target": "CWE-1247 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1247",
+      "relationship": "potential resolved by",
+      "target": "CWE-1247 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1248",
+      "relationship": "member of",
+      "target": "CWE-1195",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1248",
+      "relationship": "member of",
+      "target": "CWE-1206",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1248",
+      "relationship": "member of",
+      "target": "CWE-1388",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1248",
+      "relationship": "has",
+      "target": "CWE-1248 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1248",
+      "relationship": "potential resolved by",
+      "target": "CWE-1248 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1248",
+      "relationship": "potential resolved by",
+      "target": "CWE-1248 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1255",
+      "relationship": "member of",
+      "target": "CWE-1206",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1255",
+      "relationship": "member of",
+      "target": "CWE-1388",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1255",
+      "relationship": "peer of",
+      "target": "CWE-1259",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1255",
+      "relationship": "has",
+      "target": "CWE-1255 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1255",
+      "relationship": "potential resolved by",
+      "target": "CWE-1255 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1255",
+      "relationship": "potential resolved by",
+      "target": "CWE-1255 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1255",
+      "relationship": "potential resolved by",
+      "target": "CWE-1255 Mitigation3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1255",
+      "relationship": "potential resolved by",
+      "target": "CWE-1255 Mitigation4",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1255",
+      "relationship": "potential resolved by",
+      "target": "CWE-1255 Mitigation5",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1256",
+      "relationship": "member of",
+      "target": "CWE-1206",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1256",
+      "relationship": "has",
+      "target": "CWE-1256 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1256",
+      "relationship": "has",
+      "target": "CWE-1256 Example 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1256",
+      "relationship": "has",
+      "target": "CWE-1256 Example 3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1256",
+      "relationship": "potential resolved by",
+      "target": "CWE-1256 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1271",
+      "relationship": "member of",
+      "target": "CWE-1206",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1271",
+      "relationship": "peer of",
+      "target": "CWE-1304",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1271",
+      "relationship": "has",
+      "target": "CWE-1271 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1271",
+      "relationship": "potential resolved by",
+      "target": "CWE-1271 Mitigation 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1271",
+      "relationship": "potential resolved by",
+      "target": "CWE-1271 Mitigation 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1304",
+      "relationship": "member of",
+      "target": "CWE-1206",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1304",
+      "relationship": "peer of",
+      "target": "CWE-1271",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1304",
+      "relationship": "has",
+      "target": "CWE-1304 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1304",
+      "relationship": "has",
+      "target": "CWE-1304 Example 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1304",
+      "relationship": "potential resolved by",
+      "target": "CWE-1304 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1304",
+      "relationship": "potential resolved by",
+      "target": "CWE-1304 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1304",
+      "relationship": "potential resolved by",
+      "target": "CWE-1304 Mitigation3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1314",
+      "relationship": "member of",
+      "target": "CWE-1198",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1314",
+      "relationship": "member of",
+      "target": "CWE-1206",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1314",
+      "relationship": "peer of",
+      "target": "CWE-1299",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1314",
+      "relationship": "has",
+      "target": "CWE-1314 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1314",
+      "relationship": "potential resolved by",
+      "target": "CWE-1314 Mitigation",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1320",
+      "relationship": "member of",
+      "target": "CWE-1206",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1320",
+      "relationship": "has",
+      "target": "CWE-1320 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1320",
+      "relationship": "potential resolved by",
+      "target": "CWE-1320 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1332",
+      "relationship": "member of",
+      "target": "CWE-1206",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1332",
+      "relationship": "member of",
+      "target": "CWE-1388",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1332",
+      "relationship": "peer of",
+      "target": "CWE-1247",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1332",
+      "relationship": "has",
+      "target": "CWE-1332 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1332",
+      "relationship": "potential resolved by",
+      "target": "CWE-1332 Mitigation 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1332",
+      "relationship": "potential resolved by",
+      "target": "CWE-1332 Mitigation 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1332",
+      "relationship": "potential resolved by",
+      "target": "CWE-1332 Mitigation 3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1332",
+      "relationship": "potential resolved by",
+      "target": "CWE-1332 Mitigation 4",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1332",
+      "relationship": "potential resolved by",
+      "target": "CWE-1332 Mitigation 5",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1332",
+      "relationship": "potential resolved by",
+      "target": "CWE-1332 Mitigation 6",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1207",
+      "relationship": "member of",
+      "target": "CWE-1194",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1207",
+      "relationship": "hasmember",
+      "target": "CWE-319",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1207",
+      "relationship": "hasmember",
+      "target": "CWE-1191",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1207",
+      "relationship": "hasmember",
+      "target": "CWE-1234",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1207",
+      "relationship": "hasmember",
+      "target": "CWE-1243",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1207",
+      "relationship": "hasmember",
+      "target": "CWE-1244",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1207",
+      "relationship": "hasmember",
+      "target": "CWE-1258",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1207",
+      "relationship": "hasmember",
+      "target": "CWE-1272",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1207",
+      "relationship": "hasmember",
+      "target": "CWE-1291",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1207",
+      "relationship": "hasmember",
+      "target": "CWE-1295",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1207",
+      "relationship": "hasmember",
+      "target": "CWE-1296",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1207",
+      "relationship": "hasmember",
+      "target": "CWE-1313",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1207",
+      "relationship": "hasmember",
+      "target": "CWE-1323",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1191",
+      "relationship": "member of",
+      "target": "CWE-1207",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1191",
+      "relationship": "peer of",
+      "target": "CWE-1299",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1191",
+      "relationship": "has",
+      "target": "CWE-1191 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1191",
+      "relationship": "potential resolved by",
+      "target": "CWE-1191 Mitigation",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1234",
+      "relationship": "member of",
+      "target": "CWE-1199",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1234",
+      "relationship": "member of",
+      "target": "CWE-1207",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1234",
+      "relationship": "has",
+      "target": "CWE-1234 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1234",
+      "relationship": "potential resolved by",
+      "target": "CWE-1234 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1243",
+      "relationship": "member of",
+      "target": "CWE-1207",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1243",
+      "relationship": "has",
+      "target": "CWE-1243 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1243",
+      "relationship": "has",
+      "target": "CWE-1243 Example 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1243",
+      "relationship": "potential resolved by",
+      "target": "CWE-1243 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1244",
+      "relationship": "member of",
+      "target": "CWE-1207",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1244",
+      "relationship": "has",
+      "target": "CWE-1244 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1244",
+      "relationship": "potential resolved by",
+      "target": "CWE-1244 Mitigation 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1244",
+      "relationship": "potential resolved by",
+      "target": "CWE-1244 Mitigation 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1244",
+      "relationship": "potential resolved by",
+      "target": "CWE-1244 Mitigation 3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1258",
+      "relationship": "member of",
+      "target": "CWE-1207",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1258",
+      "relationship": "has",
+      "target": "CWE-1258 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1258",
+      "relationship": "potential resolved by",
+      "target": "CWE-1258 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1272",
+      "relationship": "member of",
+      "target": "CWE-1207",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1272",
+      "relationship": "has",
+      "target": "CWE-1272 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1272",
+      "relationship": "potential resolved by",
+      "target": "CWE-1272 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1291",
+      "relationship": "member of",
+      "target": "CWE-1207",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1291",
+      "relationship": "has",
+      "target": "CWE-1291 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1291",
+      "relationship": "has",
+      "target": "CWE-1291 Example 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1291",
+      "relationship": "potential resolved by",
+      "target": "CWE-1291 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1295",
+      "relationship": "member of",
+      "target": "CWE-1207",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1295",
+      "relationship": "has",
+      "target": "CWE-1295 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1295",
+      "relationship": "potential resolved by",
+      "target": "CWE-1295 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1296",
+      "relationship": "member of",
+      "target": "CWE-1207",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1296",
+      "relationship": "has",
+      "target": "CWE-1296 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1296",
+      "relationship": "potential resolved by",
+      "target": "CWE-1296 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1313",
+      "relationship": "member of",
+      "target": "CWE-1207",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1323",
+      "relationship": "member of",
+      "target": "CWE-1207",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1323",
+      "relationship": "has",
+      "target": "CWE-1323 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1323",
+      "relationship": "potential resolved by",
+      "target": "CWE-1323 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-319",
+      "relationship": "member of",
+      "target": "CWE-1207",
+      "properties": {}
+    },
+    {
+      "source": "CWE-319",
+      "relationship": "has",
+      "target": "CWE-319 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-319",
+      "relationship": "has",
+      "target": "CWE-319 Example 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-319",
+      "relationship": "has",
+      "target": "CWE-319 Example 3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-319",
+      "relationship": "has",
+      "target": "CWE-319 Example 4",
+      "properties": {}
+    },
+    {
+      "source": "CWE-319",
+      "relationship": "potential resolved by",
+      "target": "CWE-319 Mitigation 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-319",
+      "relationship": "potential resolved by",
+      "target": "CWE-319 Mitigation 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-319",
+      "relationship": "potential resolved by",
+      "target": "CWE-319 Mitigation 3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-319",
+      "relationship": "potential resolved by",
+      "target": "CWE-319 Mitigation 4",
+      "properties": {}
+    },
+    {
+      "source": "CWE-319",
+      "relationship": "potential resolved by",
+      "target": "CWE-319 Mitigation 5",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1208",
+      "relationship": "member of",
+      "target": "CWE-1194",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1208",
+      "relationship": "hasmember",
+      "target": "CWE-440",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1208",
+      "relationship": "hasmember",
+      "target": "CWE-1053",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1208",
+      "relationship": "hasmember",
+      "target": "CWE-1059",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1208",
+      "relationship": "hasmember",
+      "target": "CWE-1263",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1208",
+      "relationship": "hasmember",
+      "target": "CWE-1277",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1208",
+      "relationship": "hasmember",
+      "target": "CWE-1301",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1208",
+      "relationship": "hasmember",
+      "target": "CWE-1329",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1208",
+      "relationship": "hasmember",
+      "target": "CWE-1357",
+      "properties": {}
+    },
+    {
+      "source": "CWE-440",
+      "relationship": "member of",
+      "target": "CWE-1208",
+      "properties": {}
+    },
+    {
+      "source": "CWE-440",
+      "relationship": "has",
+      "target": "CWE-440 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-440",
+      "relationship": "potential resolved by",
+      "target": "CWE-440 Mitigation 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1053",
+      "relationship": "member of",
+      "target": "CWE-1208",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1059",
+      "relationship": "member of",
+      "target": "CWE-1195",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1059",
+      "relationship": "member of",
+      "target": "CWE-1208",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1059",
+      "relationship": "potential resolved by",
+      "target": "CWE-1059 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1059",
+      "relationship": "has",
+      "target": "CWE-1059 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1263",
+      "relationship": "member of",
+      "target": "CWE-1208",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1277",
+      "relationship": "member of",
+      "target": "CWE-1208",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1277",
+      "relationship": "has",
+      "target": "CWE-1277 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1277",
+      "relationship": "potential resolved by",
+      "target": "CWE-1277 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1277",
+      "relationship": "potential resolved by",
+      "target": "CWE-1277 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1277",
+      "relationship": "potential resolved by",
+      "target": "CWE-1277 Mitigation3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1301",
+      "relationship": "member of",
+      "target": "CWE-1208",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1301",
+      "relationship": "parent of",
+      "target": "CWE-1330",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1301",
+      "relationship": "potential resolved by",
+      "target": "CWE-1301 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1301",
+      "relationship": "potential resolved by",
+      "target": "CWE-1301 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1330",
+      "relationship": "childof",
+      "target": "CWE-1301",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1330",
+      "relationship": "has",
+      "target": "CWE-1330 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1330",
+      "relationship": "potential resolved by",
+      "target": "CWE-1330 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1330",
+      "relationship": "potential resolved by",
+      "target": "CWE-1330 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1330",
+      "relationship": "potential resolved by",
+      "target": "CWE-1330 Mitigation3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1330",
+      "relationship": "potential resolved by",
+      "target": "CWE-1330 Mitigation4",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1329",
+      "relationship": "member of",
+      "target": "CWE-1208",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1329",
+      "relationship": "has",
+      "target": "CWE-1329 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1329",
+      "relationship": "has",
+      "target": "CWE-1329 Example 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1329",
+      "relationship": "has",
+      "target": "CWE-1329 Example 3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1329",
+      "relationship": "potential resolved by",
+      "target": "CWE-1329 Mitigation 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1329",
+      "relationship": "potential resolved by",
+      "target": "CWE-1329 Mitigation 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1329",
+      "relationship": "potential resolved by",
+      "target": "CWE-1329 Mitigation 3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1357",
+      "relationship": "member of",
+      "target": "CWE-1208",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1357",
+      "relationship": "potential resolved by",
+      "target": "CWE-1357 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1357",
+      "relationship": "potential resolved by",
+      "target": "CWE-1357 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1357",
+      "relationship": "potential resolved by",
+      "target": "CWE-1357 Mitigation3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1388",
+      "relationship": "member of",
+      "target": "CWE-1194",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1388",
+      "relationship": "hasmember",
+      "target": "CWE-1247",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1388",
+      "relationship": "hasmember",
+      "target": "CWE-1248",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1388",
+      "relationship": "hasmember",
+      "target": "CWE-1255",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1388",
+      "relationship": "hasmember",
+      "target": "CWE-1261",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1388",
+      "relationship": "hasmember",
+      "target": "CWE-1278",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1388",
+      "relationship": "hasmember",
+      "target": "CWE-1300",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1388",
+      "relationship": "hasmember",
+      "target": "CWE-1319",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1388",
+      "relationship": "hasmember",
+      "target": "CWE-1332",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1388",
+      "relationship": "hasmember",
+      "target": "CWE-1351",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1388",
+      "relationship": "hasmember",
+      "target": "CWE-1384",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1384",
+      "relationship": "member of",
+      "target": "CWE-1388",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1384",
+      "relationship": "has",
+      "target": "CWE-1384 Example",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1384",
+      "relationship": "potential resolved by",
+      "target": "CWE-1384 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1384",
+      "relationship": "potential resolved by",
+      "target": "CWE-1384 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1384",
+      "relationship": "potential resolved by",
+      "target": "CWE-1384 Mitigation3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1319",
+      "relationship": "member of",
+      "target": "CWE-1388",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1319",
+      "relationship": "has",
+      "target": "CWE-1319 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1319",
+      "relationship": "potential resolved by",
+      "target": "CWE-1319 Mitigation 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1319",
+      "relationship": "potential resolved by",
+      "target": "CWE-1319 Mitigation 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1319",
+      "relationship": "potential resolved by",
+      "target": "CWE-1319 Mitigation 3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1319",
+      "relationship": "potential resolved by",
+      "target": "CWE-1319 Mitigation 4",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1319",
+      "relationship": "potential resolved by",
+      "target": "CWE-1319 Mitigation 5",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1319",
+      "relationship": "potential resolved by",
+      "target": "CWE-1319 Mitigation 6",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1319",
+      "relationship": "potential resolved by",
+      "target": "CWE-1319 Mitigation 7",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1247",
+      "relationship": "member of",
+      "target": "CWE-1206",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1247",
+      "relationship": "member of",
+      "target": "CWE-1388",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1247",
+      "relationship": "peer of",
+      "target": "CWE-1332",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1247",
+      "relationship": "has",
+      "target": "CWE-1247 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1247",
+      "relationship": "potential resolved by",
+      "target": "CWE-1247 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1261",
+      "relationship": "member of",
+      "target": "CWE-1199",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1261",
+      "relationship": "member of",
+      "target": "CWE-1388",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1261",
+      "relationship": "has",
+      "target": "CWE-1261 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1261",
+      "relationship": "has",
+      "target": "CWE-1261 Example 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1261",
+      "relationship": "potential resolved by",
+      "target": "CWE-1261 Mitigation 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1261",
+      "relationship": "potential resolved by",
+      "target": "CWE-1261 Mitigation 2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1332",
+      "relationship": "member of",
+      "target": "CWE-1206",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1332",
+      "relationship": "member of",
+      "target": "CWE-1388",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1332",
+      "relationship": "peer of",
+      "target": "CWE-1247",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1332",
+      "relationship": "has",
+      "target": "CWE-1332 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1332",
+      "relationship": "potential resolved by",
+      "target": "CWE-1332 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1332",
+      "relationship": "potential resolved by",
+      "target": "CWE-1332 Mitigation2",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1332",
+      "relationship": "potential resolved by",
+      "target": "CWE-1332 Mitigation3",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1332",
+      "relationship": "potential resolved by",
+      "target": "CWE-1332 Mitigation4",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1332",
+      "relationship": "potential resolved by",
+      "target": "CWE-1332 Mitigation5",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1332",
+      "relationship": "potential resolved by",
+      "target": "CWE-1332 Mitigation6",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1351",
+      "relationship": "member of",
+      "target": "CWE-1205",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1351",
+      "relationship": "member of",
+      "target": "CWE-1388",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1351",
+      "relationship": "has",
+      "target": "CWE-1351 Example",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1351",
+      "relationship": "potential resolved by",
+      "target": "CWE-1351 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1278",
+      "relationship": "member of",
+      "target": "CWE-1388",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1278",
+      "relationship": "has",
+      "target": "CWE-1278 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1278",
+      "relationship": "potential resolved by",
+      "target": "CWE-1278 Mitigation1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1248",
+      "relationship": "member of",
+      "target": "CWE-1195",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1248",
+      "relationship": "member of",
+      "target": "CWE-1206",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1248",
+      "relationship": "member of",
+      "target": "CWE-1388",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1248",
+      "relationship": "has",
+      "target": "CWE-1248 Example 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1248",
+      "relationship": "potential resolved by",
+      "target": "CWE-1248 Mitigation 1",
+      "properties": {}
+    },
+    {
+      "source": "CWE-1248",
+      "relationship": "potential resolved by",
+      "target": "CWE-1248 Mitigation 2",
+      "properties": {}
+    }
+  ]
+}
