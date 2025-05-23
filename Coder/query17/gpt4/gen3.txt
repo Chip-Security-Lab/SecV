@@ -1,0 +1,17 @@
+module lock_jtag(
+    input wire clk,
+    input wire reset,
+    input wire en,
+    input wire d,
+    output reg lock_jtag
+);
+    // Case 1: No Initialization
+    always @(posedge clk or negedge reset) begin
+        if (!reset) begin
+            // Do nothing, lock_jtag retains its old or unknown value
+        end
+        else if (en) begin
+            lock_jtag <= d;
+        end
+    end
+endmodule

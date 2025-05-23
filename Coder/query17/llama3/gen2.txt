@@ -1,0 +1,23 @@
+module lock_jtag(
+    input wire clk,
+    input wire reset,
+    input wire en,
+    input wire d,
+    output reg lock_jtag
+);
+
+parameter RESET_BEHAVIOR = 2; // 1 for Case 1, 2 for Case 2
+
+always @(posedge clk) begin
+    if (~reset) begin
+        if (RESET_BEHAVIOR == 2) begin
+            lock_jtag <= 1'b0;
+        end
+    end else begin
+        if (en) begin
+            lock_jtag <= d;
+        end
+    end
+end
+
+endmodule

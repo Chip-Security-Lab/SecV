@@ -1,0 +1,20 @@
+module lock_jtag(
+  input wire clk,
+  input wire reset,
+  input wire en,
+  input wire d,
+  output reg lock_jtag
+);
+
+  // Reset behavior (Case 1: No Initialization)
+  //lock_jtag = 1'bz;
+
+  // Reset behavior (Case 2: Explicit Initialization)
+  always @(posedge clk) begin
+    if (reset == 1'b0) begin
+      lock_jtag <= 1'b0;
+    end else if (en == 1'b1) begin
+      lock_jtag <= d;
+    end
+  end
+endmodule

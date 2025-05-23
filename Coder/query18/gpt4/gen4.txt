@@ -1,0 +1,36 @@
+module reglk_wrapper #(parameter REG_COUNT = 6)
+(
+  input wire clk_i,
+  input wire rst_ni,
+  input wire jtag_unlock,
+  input wire rst_9,
+  
+  output wire [31:0] reglk_mem0,
+  output wire [31:0] reglk_mem1,
+  output wire [31:0] reglk_mem2,
+  output wire [31:0] reglk_mem3,
+  output wire [31:0] reglk_mem4,
+  output wire [31:0] reglk_mem5
+);
+
+  // Configure initialization behaviors here:
+  // Comment out the inappropriate option.
+  
+  // Case 1: Fully Locked State
+  // localparam INIT_VALUE = 32'hFFFFFFFF;
+  // Case 2: Fully Unlocked State
+  // localparam INIT_VALUE = 32'h00000000;
+
+  always @(posedge clk_i or negedge rst_ni or posedge jtag_unlock or negedge rst_9) begin
+    if (~rst_ni || jtag_unlock || ~rst_9) begin
+      reglk_mem0 <= INIT_VALUE;
+      reglk_mem1 <= INIT_VALUE;
+      reglk_mem2 <= INIT_VALUE;
+      reglk_mem3 <= INIT_VALUE;
+      reglk_mem4 <= INIT_VALUE;
+      reglk_mem5 <= INIT_VALUE;
+    end
+    // Add other functional behavior here as necessary.
+  end
+  
+endmodule

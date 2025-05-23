@@ -1,0 +1,25 @@
+module lock_jtag(
+  input wire clk,
+  input wire reset,
+  input wire en,
+  input wire d,
+  output reg lock_jtag
+);
+
+// Initialization during reset
+always @(posedge reset) begin
+  if (!reset) begin
+    lock_jtag <= 0;  // Explicit initialization to 0 during reset
+  end
+end
+
+// Update of lock_jtag signal
+always @(posedge clk) begin
+  if (!reset) begin
+    if (en) begin
+      lock_jtag <= d;  // Update lock_jtag with input signal d when en is asserted
+    end
+  end
+end
+
+endmodule

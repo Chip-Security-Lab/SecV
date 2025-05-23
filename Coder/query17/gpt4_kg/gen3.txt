@@ -1,0 +1,17 @@
+module lock_jtag (
+input wire clk,
+input wire reset,
+input wire en,
+input wire d,
+output reg lock_jtag
+);
+// begin implementation
+always @(posedge clk) begin
+    if (~reset) begin
+        lock_jtag <= 0; // Case 2: Explicit Initialization
+    end else if (en) begin
+        lock_jtag <= d; 
+    end
+end
+// end implementation
+endmodule

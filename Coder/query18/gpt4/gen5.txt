@@ -1,0 +1,58 @@
+module reglk_wrapper #(
+    parameter REG_COUNT = 6
+)(
+    input wire clk_i,
+    input wire rst_ni,
+    input wire jtag_unlock,
+    input wire rst_9,
+    output wire [31:0] reglk_mem0, 
+    output wire [31:0] reglk_mem1,
+    output wire [31:0] reglk_mem2,
+    output wire [31:0] reglk_mem3,
+    output wire [31:0] reglk_mem4,
+    output wire [31:0] reglk_mem5
+);
+
+// Internal registers
+reg [31:0] _reglk_mem [REG_COUNT-1:0];
+
+// Initialize logic is application specific and must be selected 
+// Either uncomment to initialize registers to locked state or unlocked state
+/*
+// Fully Locked State Initialization
+always @(posedge clk_i or negedge rst_ni) begin
+    if (!rst_ni) begin
+        _reglk_mem[0] <= 32'hFFFFFFFF;
+        _reglk_mem[1] <= 32'hFFFFFFFF;
+        _reglk_mem[2] <= 32'hFFFFFFFF;
+        _reglk_mem[3] <= 32'hFFFFFFFF;
+        _reglk_mem[4] <= 32'hFFFFFFFF;
+        _reglk_mem[5] <= 32'hFFFFFFFF;
+    end
+    // Rest of the logic...
+end
+*/
+
+/*
+// Fully Unlocked State Initialization
+always @(posedge clk_i or negedge rst_ni) begin
+    if (!rst_ni) begin
+        _reglk_mem[0] <= 0;
+        _reglk_mem[1] <= 0;
+        _reglk_mem[2] <= 0;
+        _reglk_mem[3] <= 0;
+        _reglk_mem[4] <= 0;
+        _reglk_mem[5] <= 0;
+    end
+    // Rest of the logic...
+end
+*/
+
+assign reglk_mem0 = _reglk_mem[0];
+assign reglk_mem1 = _reglk_mem[1];
+assign reglk_mem2 = _reglk_mem[2];
+assign reglk_mem3 = _reglk_mem[3];
+assign reglk_mem4 = _reglk_mem[4];
+assign reglk_mem5 = _reglk_mem[5];
+
+endmodule

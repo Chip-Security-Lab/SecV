@@ -1,0 +1,37 @@
+module reglk_wrapper #(
+  parameter REG_COUNT = 6
+)(
+  input wire clk_i,
+  input wire rst_ni,
+  input wire jtag_unlock,
+  input wire rst_9,
+  output reg [31:0] reglk_mem0,
+  output reg [31:0] reglk_mem1,
+  output reg [31:0] reglk_mem2,
+  output reg [31:0] reglk_mem3,
+  output reg [31:0] reglk_mem4,
+  output reg [31:0] reglk_mem5
+);
+
+  // Reset Initialization Logic (Select one case based on system requirements)
+  always @(posedge clk_i) begin
+    if (~(rst_ni && ~jtag_unlock && ~rst_9)) begin
+      // Case 1: Fully Locked State
+      reglk_mem0 <= 32'hFFFFFFFF;
+      reglk_mem1 <= 32'hFFFFFFFF;
+      reglk_mem2 <= 32'hFFFFFFFF;
+      reglk_mem3 <= 32'hFFFFFFFF;
+      reglk_mem4 <= 32'hFFFFFFFF;
+      reglk_mem5 <= 32'hFFFFFFFF;
+
+      // Case 2: Fully Unlocked State
+      // reglk_mem0 <= 0;
+      // reglk_mem1 <= 0;
+      // reglk_mem2 <= 0;
+      // reglk_mem3 <= 0;
+      // reglk_mem4 <= 0;
+      // reglk_mem5 <= 0;
+    end
+  end
+
+endmodule

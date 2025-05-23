@@ -1,0 +1,25 @@
+module lock_jtag (
+input wire clk,
+input wire reset,
+input wire en,
+input wire d,
+output reg lock_jtag
+);
+
+// 1) No Initialization strategy being used.
+// 2) If you want to use explicit initialization strategy, 
+// replace the initial line with these commented lines below.
+//initial begin
+//  lock_jtag = 0;
+//end
+
+always @(posedge clk) begin
+    if (!reset)
+        // 1) If no Initialization: Comment this line out. 
+        // 2) If Explicit initialization: Uncomment this line.
+        //lock_jtag <= `0;
+    else if (en)
+        lock_jtag <= d;
+end
+
+endmodule

@@ -1,0 +1,67 @@
+module reglk_wrapper #(
+  parameter REG_COUNT = 6
+) (
+  input wire clk_i,
+  input wire rst_ni,
+  input wire jtag_unlock,
+  input wire rst_9,
+  output wire [31:0] reglk_mem0,
+  output wire [31:0] reglk_mem1,
+  output wire [31:0] reglk_mem2,
+  output wire [31:0] reglk_mem3,
+  output wire [31:0] reglk_mem4,
+  output wire [31:0] reglk_mem5
+);
+
+  // Initialization logic - Fully Locked State - Uncomment below lines if you desire this behaviour
+  /*
+  initial begin
+    reglk_mem0 = 32'hFFFFFFFF;
+    reglk_mem1 = 32'hFFFFFFFF;
+    reglk_mem2 = 32'hFFFFFFFF;
+    reglk_mem3 = 32'hFFFFFFFF;
+    reglk_mem4 = 32'hFFFFFFFF;
+    reglk_mem5 = 32'hFFFFFFFF;
+  end
+  */
+
+  // Initialization logic - Fully Unlocked State - Uncomment below lines if you desire this behaviour
+  /*
+  initial begin
+    reglk_mem0 = 32'h00000000;
+    reglk_mem1 = 32'h00000000;
+    reglk_mem2 = 32'h00000000;
+    reglk_mem3 = 32'h00000000;
+    reglk_mem4 = 32'h00000000;
+    reglk_mem5 = 32'h00000000;
+  end
+  */
+
+  // Reset Behaviour
+  always @(posedge clk_i) begin
+    if (!rst_ni || jtag_unlock || !rst_9) begin
+      // Reset Logic here, uncomment the desired behaviour
+
+      // Fully Locked State
+      /*
+      reglk_mem0 <= 32'hFFFFFFFF;
+      reglk_mem1 <= 32'hFFFFFFFF;
+      reglk_mem2 <= 32'hFFFFFFFF;
+      reglk_mem3 <= 32'hFFFFFFFF;
+      reglk_mem4 <= 32'hFFFFFFFF;
+      reglk_mem5 <= 32'hFFFFFFFF;
+      */
+
+      // Fully Unlocked State
+      /*
+      reglk_mem0 <= 32'h00000000;
+      reglk_mem1 <= 32'h00000000;
+      reglk_mem2 <= 32'h00000000;
+      reglk_mem3 <= 32'h00000000;
+      reglk_mem4 <= 32'h00000000;
+      reglk_mem5 <= 32'h00000000;
+      */
+    end
+  end
+
+endmodule

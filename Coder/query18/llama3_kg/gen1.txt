@@ -1,0 +1,28 @@
+Here is the complete Verilog code for the `reglk_wrapper` module:
+
+module reglk_wrapper #(
+    parameter REG_COUNT = 6  
+)(
+    input  wire        clk_i,     
+    input  wire        rst_ni,    
+    input  wire        jtag_unlock, 
+    input  wire        rst_9,     
+    output reg [31:0]  reglk_mem0,
+    output reg [31:0]  reglk_mem1,
+    output reg [31:0]  reglk_mem2,
+    output reg [31:0]  reglk_mem3,
+    output reg [31:0]  reglk_mem4,
+    output reg [31:0]  reglk_mem5
+);
+
+    always @(posedge clk_i) begin
+        if (~(rst_ni && ~jtag_unlock && ~rst_9)) begin
+            reglk_mem0 <= 32'hFFFFFFFF;  // Fully Locked State (Case 1)
+            reglk_mem1 <= 32'hFFFFFFFF;
+            reglk_mem2 <= 32'hFFFFFFFF;
+            reglk_mem3 <= 32'hFFFFFFFF;
+            reglk_mem4 <= 32'hFFFFFFFF;
+            reglk_mem5 <= 32'hFFFFFFFF;
+        end
+    end
+endmodule
