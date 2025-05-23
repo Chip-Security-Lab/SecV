@@ -1,0 +1,17 @@
+module sft(
+  input wire clk,
+  input wire rst,
+  input wire [3:0] a,
+  output reg [3:0] q
+);
+
+  always @(posedge clk) begin
+    if (rst) begin
+      q <= 4'b0000;
+    end else begin
+      // Serial Data Transfer
+      q <= {q[2:0], a[0]};
+    end
+  end
+
+endmodule

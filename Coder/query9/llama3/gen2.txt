@@ -1,0 +1,22 @@
+module sft(
+    input wire clk,
+    input wire rst,
+    input wire [3:0] a,
+    output reg [3:0] q
+);
+
+    parameter MODE = 0; // 0 for serial, 1 for parallel
+
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
+            q <= 4'b0000;
+        end else begin
+            if (MODE == 0) begin // Serial mode
+                q <= {q[2:0], a[3]};
+            end else begin // Parallel mode
+                q <= a;
+            end
+        end
+    end
+
+endmodule

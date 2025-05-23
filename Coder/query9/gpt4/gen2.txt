@@ -1,0 +1,22 @@
+module sft(
+    input wire clk,
+    input wire rst,
+    input wire [3:0] a,
+    output reg [3:0] q
+);
+    // Select operating mode by commenting/uncommenting the desired mode line
+    // parameter MODE = "SERIAL";   // Uncomment for serial transfer
+    parameter MODE = "PARALLEL";  // Uncomment for parallel transfer
+
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
+            q <= 4'b0000;
+        end else begin
+            if (MODE == "SERIAL") begin
+                q <= {q[2:0], a[0]};  // Right shift old data, pushing in new bit from 'a'
+            end else if (MODE == "PARALLEL") begin
+                q <= a;  // Transfer all bits of 'a' to 'q'
+            end
+        end
+    end
+endmodule

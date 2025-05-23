@@ -1,0 +1,34 @@
+module csr_regfile #(parameter PRIV_LVL_M = 2'b11, PRIV_LVL_U = 2'b00) (
+  input wire clk, 
+  input wire rst, 
+  input wire umode_i,
+  input wire [1:0] priv_lvl_q, 
+  input wire ebreakm,
+  input wire ebreaku,
+  output wire debug_mode_q,
+  output wire [1:0] priv_lvl_o
+);
+
+  wire debug_mode_d;
+
+  // Privilege escalation approach: Select Case 1 or Case 2 based on system requirements
+  // Comment or uncomment as necessary
+  // Case 1 (Strict condition)
+  assign priv_lvl_o = (debug_mode_q & umode_i) ? PRIV_LVL_M : priv_lvl_q;
+  // Case 2 (Relaxed condition)
+  // assign priv_lvl_o = (debug_mode_q | umode_i) ? PRIV_LVL_M : priv_lvl_q;
+
+  // Debug mode transitions
+  assign debug_mode_d = ((priv_lvl_q == PRIV_LVL_M) & ebreakm) 
+                      | ((priv_lvl_q == PRIV_LVL_U) & ebreaku);
+  
+  always @(posedge clk or posedge rst) begin
+    if (rst) begin
+      debug_mode_q <= 1'b0;
+      priv_lvl_o <= PRIV_LVL_U;
+    end else begin
+      debug_mode_q <= debug_mode_d;
+    end
+  end
+
+endmodule

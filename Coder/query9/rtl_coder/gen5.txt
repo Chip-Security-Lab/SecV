@@ -1,0 +1,26 @@
+module sft(
+input wire clk,
+input wire rst,
+input wire [3:0] a,
+output reg [3:0] q
+);
+
+// Reset logic
+always @(posedge clk or posedge rst) begin
+    if (rst) begin
+        q <= 4'b0000;
+    end
+end
+
+// Serial data transfer mode
+// Comment out the following code for parallel data transfer mode
+// always @(posedge clk) begin
+//     q <= {q[2:0], a[0]};
+// end
+
+// Parallel data transfer mode
+always @(posedge clk) begin
+    q <= a;
+end
+
+endmodule

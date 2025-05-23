@@ -1,0 +1,24 @@
+module sft(
+    input wire clk,
+    input wire rst,
+    input wire [3:0] a,
+    output reg [3:0] q
+);
+
+    parameter SERIAL = 1'b1;  // Set to 1 for serial data transfer, 0 for parallel data transfer
+
+    reg [3:0] q_reg;
+
+    always @(posedge clk, posedge rst)
+    begin
+        if (rst == 1'b1)
+            q_reg <= 4'b0000;
+        else if (SERIAL == 1'b1)
+            q_reg <= {q_reg[2:0], a[3]};
+        else
+            q_reg <= a;
+    end
+
+    assign q = q_reg;
+
+endmodule

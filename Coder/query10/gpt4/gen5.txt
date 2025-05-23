@@ -1,0 +1,56 @@
+module csr_regfile #(
+    parameter PRIV_LVL_M = 2'b11,
+    parameter PRIV_LVL_U = 2'b00
+)(
+    input wire clk,
+    input wire rst,
+    input wire umode_i,
+    input wire [1:0] priv_lvl_q,
+    input wire ebreakm,
+    input wire ebreaku,
+    output reg debug_mode_q,
+    output reg [1:0] priv_lvl_o
+);
+
+    // Internal signals
+    reg debug_mode_d;
+
+    // Debug mode decision logic
+    always @(*) begin
+        if (priv_lvl_q == PRIV_LVL_M && ebreakm)
+            debug_mode_d = 1'b1;
+        else if (priv_lvl_q == PRIV_LVL_U && ebreaku)
+            debug_mode_d = 1'b1;
+        else
+            debug_mode_d = 1'b0;
+    end
+
+    // Privilege escalation logic (Select one case: Strict or Relaxed)
+    // Case 1 - Strict Condition:
+    always @(*) begin
+        if (debug_mode_q && umode_i)
+            priv_lvl_o = PRIV_LVL_M;
+        else
+            priv_lvl_o = priv_lvl_q;
+    end
+
+    // Case 2 - Relaxed Condition:
+    // always @(*) begin
+    //     if (debug_mode_q || umode_i)
+    //         priv_lvl_o = PRIV_LVL_M;
+    //     else
+    //         priv_lvl_o = priv_lvl_q;
+    // end
+
+    // Output register updates on clock's rising edge
+    always @(posedge clk) begin
+        if (rst) begin
+            debug_mode_q <= 0;
+            priv_lvl_o <= PRIV_LVL_U;
+        end else begin
+            debug_mode_q <= debug_mode_d;
+            // priv_lvl_o updates based on the active case above
+        end
+    end
+
+endmodule

@@ -1,0 +1,52 @@
+module csr_regfile(
+    input wire clk,
+    input wire rst,
+    input wire umode_i,
+    input wire [1:0] priv_lvl_q,
+    input wire ebreakm,
+    input wire ebreaku,
+    output reg debug_mode_q,
+    output reg [1:0] priv_lvl_o
+);
+    // Parameters for privilege levels
+    parameter PRIV_LVL_M = 2'b11;
+    parameter PRIV_LVL_U = 2'b00;
+
+    // Internal signal for next state computation of debug mode
+    reg debug_mode_d;
+
+    // Determine the next state of the debug mode
+    always @(*) begin
+        if (priv_lvl_q == PRIV_LVL_M && ebreakm)
+            debug_mode_d = 1;
+        else if (priv_lvl_q == PRIV_LVL_U && ebreaku)
+            debug_mode_d = 1;
+        else 
+            debug_mode_d = 0;
+    end
+
+    // Update the outputs and internal registers at the rising edge of the clock
+    always @(posedge clk) begin
+        if (rst) begin
+            debug_mode_q <= 0;
+            priv_lvl_o <= PRIV_LVL_U;
+        end else begin
+            debug_mode_q <= debug_mode_d;
+
+            // Select either Case 1 (Strict Condition) or Case 2 (Relaxed Condition)
+            // Uncomment the following as per the required scenario:
+
+            // Case 1: Strict Condition
+            // if (debug_mode_q && umode_i)
+            //    priv_lvl_o <= PRIV_LVL_M;
+            // else
+            //    priv_lvl_o <= priv_lvl_q;
+
+            // Case 2: Relaxed Condition
+            if (debug_mode_q || umode_i)
+                priv_lvl_o <= PRIV_LVL_M; 
+            else 
+                priv_lvl_o <= priv_lvl_q;
+        end
+    end
+endmodule

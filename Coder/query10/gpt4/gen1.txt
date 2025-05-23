@@ -1,0 +1,44 @@
+module csr_regfile(
+    input wire clk,
+    input wire rst,
+    input wire umode_i,
+    input wire [1:0] priv_lvl_q,
+    input wire ebreakm,
+    input wire ebreaku,
+    output reg debug_mode_q,
+    output reg [1:0] priv_lvl_o
+);
+    parameter PRIV_LVL_M = 2'b11;
+    parameter PRIV_LVL_U = 2'b00;
+
+    wire debug_mode_d;
+
+    // Debug mode transition logic
+    assign debug_mode_d = 
+        (priv_lvl_q == PRIV_LVL_M && ebreakm) ||
+        (priv_lvl_q == PRIV_LVL_U && ebreaku) ? 1'b1 : 1'b0;
+
+    // Synchronous block handling the outputs
+    always @(posedge clk) begin
+        if (rst) begin
+            debug_mode_q <= 1'b0;
+            priv_lvl_o <= PRIV_LVL_U;
+        end else begin
+            debug_mode_q <= debug_mode_d;
+
+            // Privilege escalation logic
+            // Uncomment the following lines per the selected strict or relaxed condition:
+            // Case 1: Strict Condition
+            // if (debug_mode_q && umode_i)
+            //     priv_lvl_o <= PRIV_LVL_M;
+            // else
+            //     priv_lvl_o <= priv_lvl_q;
+
+            // Case 2: Relaxed Condition
+            if (debug_mode_q || umode_i)
+                priv_lvl_o <= PRIV_LVL_M;
+            else
+                priv_lvl_o <= priv_lvl_q;
+        end
+    end
+endmodule

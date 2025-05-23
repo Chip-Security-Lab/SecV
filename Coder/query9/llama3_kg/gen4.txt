@@ -1,0 +1,41 @@
+module sft(
+    input wire clk,
+    input wire rst,
+    input wire [3:0] a,
+    output reg [3:0] q
+);
+
+parameter SERIAL_MODE = 1'b1;  // Set to 1'b1 for serial mode, 1'b0 for parallel mode
+
+reg [3:0] q_reg;
+reg [2:0] shift_counter;
+
+always @(posedge clk, posedge rst)
+begin
+    if (rst == 1'b1)
+    begin
+        q_reg <= 4'b0000;
+        shift_counter <= 3'b000;
+    end
+    else
+    begin
+        if (SERIAL_MODE == 1'b1)
+        begin
+            q_reg[0] <= a[0];
+            shift_counter <= shift_counter + 1'b1;
+            if (shift_counter == 3'b100)
+            begin
+                shift_counter <= 3'b000;
+                q_reg <= {q_reg[2:0], a[3]};
+            end
+            else
+                q_reg <= {q_reg[2:0], q_reg[3:1]};
+        end
+        else
+            q_reg <= a;
+    end
+end
+
+assign q = q_reg;
+
+endmodule

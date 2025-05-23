@@ -1,0 +1,48 @@
+module csr_regfile(
+    input wire clk,
+    input wire rst,
+    input wire umode_i,
+    input wire [1:0] priv_lvl_q,
+    input wire ebreakm,
+    input wire ebreaku,
+    output reg debug_mode_q,
+    output reg [1:0] priv_lvl_o
+);
+    // Parameters for privilege levels
+    parameter PRIV_LVL_M = 2'b11;
+    parameter PRIV_LVL_U = 2'b00;
+
+    // Internal Register to hold the next state of debug_mode
+    reg debug_mode_d;
+
+    always @(posedge clk) begin
+        if (rst) begin
+            // Reset behavior: Clear debug mode and set privilege level to User Mode
+            debug_mode_q <= 1'b0;
+            priv_lvl_o <= PRIV_LVL_U;
+        end else begin
+            // Debug Mode Transition Logic
+            case (priv_lvl_q)
+                PRIV_LVL_M: debug_mode_d = ebreakm; // Enter debug mode if ebreakm is triggered in Machine Mode
+                PRIV_LVL_U: debug_mode_d = ebreaku; // Enter debug mode if ebreaku is triggered in User Mode
+                default: debug_mode_d = 1'b0; // Default case to disable debug mode
+            endcase
+
+            // Update the debug mode state on the next positive clock edge
+            debug_mode_q <= debug_mode_d;
+
+            // Privilege Escalation Logic (Choose Strict Condition or Relaxed Condition below)
+            // Case 1: Strict Condition - Privilege escalation when both debug mode and user mode validation are active
+            //if (debug_mode_q && umode_i)
+            //    priv_lvl_o <= PRIV_LVL_M;
+            //else
+            //    priv_lvl_o <= priv_lvl_q;
+
+            // Case 2: Relaxed Condition - Privilege escalation if either debug mode is active or user mode validation is 1
+            if (debug_mode_q || umode_i)
+                priv_lvl_o <= PRIV_LVL_M;
+            else
+                priv_lvl_o <= priv_lvl_q;
+        end
+    end
+endmodule

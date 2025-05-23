@@ -1,0 +1,19 @@
+module sft(
+    input wire clk,
+    input wire rst
+);
+    // Input Ports
+    input wire [3:0] a;
+    // Output Ports
+    output reg [3:0] q;
+
+    // Implementation Details
+
+    // Reset Behavior
+    always @(posedge clk, posedge rst)
+        if (rst == 1'b1)
+            q <= 4'b0000;
+        else
+            q <= a;
+
+endmodule

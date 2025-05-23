@@ -1,0 +1,21 @@
+module sft(
+    input wire clk,
+    input wire rst,
+    input wire [3:0] a,
+    output reg [3:0] q
+);
+    always @(posedge clk, posedge rst) begin
+        if (rst) begin
+            q <= 4'b0000;
+        end
+        else begin
+            // Select either of the modes below based on the required functionality.
+            
+            // For Serial Data Transfer Mode (uncomment the line below for Serial Mode)
+            // q <= {q[2:0], a[0]}; // Shift in the least significant bit of 'a' into 'q'
+            
+            // For Parallel Data Transfer Mode (uncomment the line below for Parallel Mode)
+            // q <= a; // Directly load 'a' into 'q'
+        end
+    end
+endmodule

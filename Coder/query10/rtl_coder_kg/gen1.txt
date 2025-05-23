@@ -1,0 +1,34 @@
+module csr_regfile #(
+    parameter PRIV_LVL_M = 2'b11, 
+    parameter PRIV_LVL_U = 2'b00  
+)(
+    input  wire         clk,           
+    input  wire         rst,           
+    input  wire         umode_i,       
+    input  wire [1:0]   priv_lvl_q,    
+    input  wire         ebreakm,       
+    input  wire         ebreaku,       
+    output reg          debug_mode_q,  
+    output reg [1:0]    priv_lvl_o     
+);
+
+    reg debug_mode_d; 
+    
+    always @(*) begin
+        case (priv_lvl_q)
+            PRIV_LVL_M: debug_mode_d = ebreakm;
+            PRIV_LVL_U: debug_mode_d = ebreaku;
+            default:    debug_mode_d = 1'b0;
+        endcase
+    end
+
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
+            debug_mode_q <= 1'b0;
+            priv_lvl_o   <= PRIV_LVL_U;
+        end else begin
+            debug_mode_q <= debug_mode_d;
+            priv_lvl_o   <= (debug_mode_q && umode_i) ? PRIV_LVL_M : priv_lvl_q;
+        end
+    end
+endmodule
