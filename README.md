@@ -7,7 +7,7 @@
 
 SecV: LLM-based Secure Verilog Generation with Clue-Guided Exploration on Hardware-CWE Knowledge Graph
 
-# Processing results have been saved in the builder and verifier /parsed_results folder.
-# You can store it directly to your neo4j repository.
-# We have shown the easiest way to implement the method flow.
-# If you have questions, you can contact me at fhfan@hdu.edu.cn 🙂
+Processing results have been saved in the builder and verifier /parsed_results folder.
+You can store it directly to your neo4j repository.
+We have shown the easiest way to implement the method flow.
+If you have questions, you can contact me at fhfan@hdu.edu.cn 🙂
