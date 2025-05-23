@@ -1,0 +1,31 @@
+module foo_bar (
+    input wire [31:0] data_in,
+    input wire [31:0] incoming_id,
+    input wire [31:0] address,
+    input wire clk,
+    input wire rst_n,
+    output reg [31:0] data_out
+);
+    wire write_auth;
+    wire addr_auth;
+    reg [31:0] acl_oh_allowlist;
+    reg [31:0] q;
+
+    // Address Validation Logic (Case 1: Strict Address Validation)
+    assign addr_auth = (address == 32'hF00) ? 1 : 0;
+
+    // Permission Checks
+    assign write_auth = (incoming_id | acl_oh_allowlist) != 0 ? 1 : 0;
+
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            acl_oh_allowlist <= 32'h8312;
+            q <= 0;
+        end else if (addr_auth && write_auth) begin
+            q <= data_in;
+        end
+    end
+
+    // Data Output
+    assign data_out = q;
+endmodule

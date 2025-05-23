@@ -1,0 +1,35 @@
+module foo_bar(
+  input wire [31:0] data_in,
+  input wire [31:0] incoming_id,
+  input wire [31:0] address,
+  input wire clk,
+  input wire rst_n,
+  output reg [31:0] data_out
+);
+
+  // Address validation logic
+  wire addr_auth;
+  assign addr_auth = (address == 32'hF00); // Case 1: Strict address validation
+  // assign addr_auth = (address == 32'hF00 || address == 32'h800F00); // Case 2: Expanded address validation
+
+  // Permission checks
+  wire write_auth;
+  reg [31:0] acl_oh_allowlist;
+  assign write_auth = (incoming_id & acl_oh_allowlist) != 0;
+
+  // Data update logic
+  reg [31:0] q;
+  always @(posedge clk) begin
+    if (rst_n == 0) begin
+      acl_oh_allowlist <= 32'h8312;
+      q <= 0;
+      data_out <= 0;
+    end else begin
+      if (addr_auth && write_auth) begin
+        q <= data_in;
+      end
+      data_out <= q;
+    end
+  end
+
+endmodule

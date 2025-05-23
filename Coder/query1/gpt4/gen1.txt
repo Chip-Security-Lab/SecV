@@ -1,0 +1,24 @@
+module foo_bar(
+    input wire clk,
+    input wire rst_n,
+    input wire [19:0] usr_id,
+    input wire [69:0] data_in,
+    output reg [69:0] data_out
+);
+    reg grant_access;
+
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            data_out = 70'd0;
+            grant_access = 1'b0;
+        end else begin
+            if (usr_id == 20'h4) begin
+                grant_access = 1'b1;
+                data_out = data_in;
+            end else begin
+                grant_access = 1'b0;
+                data_out = data_out;
+            end
+        end
+    end
+endmodule

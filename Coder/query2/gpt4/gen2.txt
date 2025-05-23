@@ -1,0 +1,39 @@
+module foo_bar(
+    input wire [31:0] data_in,
+    input wire [31:0] incoming_id,
+    input wire [31:0] address,
+    input wire clk,
+    input wire rst_n,
+    output reg [31:0] data_out
+);
+    // Internal Signals
+    reg [31:0] acl_oh_allowlist;
+    reg [31:0] q;
+    wire write_auth;
+    wire addr_auth;
+
+    // Address Validation Logic for strict control
+    assign addr_auth = (address == 32'hF00);
+
+    // Permission Checks
+    assign write_auth = (incoming_id & acl_oh_allowlist) != 0;
+
+    // Synchronous Block: Clock and Reset Management
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            // Reset behavior
+            acl_oh_allowlist <= 32'h8312;
+            q <= 32'b0;
+            data_out <= 32'b0;
+        end else begin
+            // Operation on the rising edge of clock
+            if (addr_auth && write_auth) begin
+                // Update register if both address and write authorization are valid
+                q <= data_in;
+            end
+            // Output reflects the current value of the secure register q
+            data_out <= q;
+        end
+    end
+
+endmodule
