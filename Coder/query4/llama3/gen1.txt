@@ -1,0 +1,37 @@
+module csr_access_check(
+    input  wire csr_we,
+    input  wire csr_read,
+    input  wire [CSR_ADDR_WIDTH-1:0] csr_addr_i,
+    input  wire [PRIV_LVL_WIDTH-1:0] priv_lvl_o,
+    input  wire debug_mode_q,
+    output wire csr_exception_valid,
+    output wire [31:0] csr_exception_cause
+);
+
+    parameter CSR_ADDR_WIDTH = 12;
+    parameter PRIV_LVL_WIDTH = 2;
+
+    wire [1:0] addr_priv_lvl;
+    wire mepc_access;
+    wire debug_csr_access;
+
+    assign addr_priv_lvl = csr_addr_i[9:8];
+    assign mepc_access = (csr_addr_i == 12'h341);
+    assign debug_csr_access = (csr_addr_i >= 12'h7A0 && csr_addr_i <= 12'h7FF);
+
+    // Case 1: Restrictive Access ( Comment out for Case 2 )
+    assign csr_exception_valid = (csr_we || csr_read) && (
+        (mepc_access && priv_lvl_o != 2'b11) ||
+        (addr_priv_lvl != priv_lvl_o[1:0] && priv_lvl_o != 2'b11) ||
+        (debug_csr_access && !debug_mode_q)
+    );
+
+    // Case 2: Relaxed Access ( Uncomment for Case 2 )
+    // assign csr_exception_valid = (csr_we || csr_read) && (
+    //     (addr_priv_lvl != priv_lvl_o[1:0] && priv_lvl_o != 2'b11) ||
+    //     (debug_csr_access && !debug_mode_q)
+    // );
+
+    assign csr_exception_cause = 32'h02; // Illegal instruction
+
+endmodule

@@ -1,0 +1,58 @@
+module csr_access_check(
+    input  wire csr_we,
+    input  wire csr_read,
+    input  wire [CSR_ADDR_WIDTH-1:0] csr_addr_i,
+    input  wire [PRIV_LVL_WIDTH-1:0] priv_lvl_o,
+    input  wire debug_mode_q,
+    output reg csr_exception_valid,
+    output reg [6:0] csr_exception_cause
+);
+
+    parameter CSR_ADDR_WIDTH = 12;
+    parameter PRIV_LVL_WIDTH = 2;
+
+    // MEPC address
+    localparam MEPC_ADDR = 12'h341;
+
+    // Privilege level decoding
+    localparam PRIV_LVL_MACHINE = 2'b11;
+    localparam PRIV_LVL_HYP = 2'b10;
+    localparam PRIV_LVL_SUPERVISOR = 2'b01;
+    localparam PRIV_LVL_USER = 2'b00;
+
+    // Debug-specific CSR address range
+    localparam DBG_CSR_ADDR_START = 12'h7A0;
+    localparam DBG_CSR_ADDR_END = 12'h7FF;
+
+    // Case 1: Restrictive Access for MEPC (selected implementation)
+    // Case 2: Relaxed Access for MEPC can be implemented by removing the condition for MEPC access
+
+    always @ (*) begin
+        csr_exception_valid = 0;
+        csr_exception_cause = 0;
+
+        // Check for debug mode access
+        if ((csr_addr_i >= DBG_CSR_ADDR_START) && (csr_addr_i <= DBG_CSR_ADDR_END) && !debug_mode_q) begin
+            csr_exception_valid = 1;
+            csr_exception_cause = 7'b0000006; // illegal instruction
+        end
+        // Check for privilege level access
+        else if ((csr_addr_i[9:8] == 2'b11) && (priv_lvl_o != PRIV_LVL_MACHINE)) begin
+            csr_exception_valid = 1;
+            csr_exception_cause = 7'b0000006; // illegal instruction
+        end
+        else if ((csr_addr_i[9:8] == 2'b10) && (priv_lvl_o != PRIV_LVL_HYP) && (priv_lvl_o != PRIV_LVL_MACHINE)) begin
+            csr_exception_valid = 1;
+            csr_exception_cause = 7'b0000006; // illegal instruction
+        end
+        else if ((csr_addr_i[9:8] == 2'b01) && (priv_lvl_o != PRIV_LVL_SUPERVISOR) && (priv_lvl_o != PRIV_LVL_HYP) && (priv_lvl_o != PRIV_LVL_MACHINE)) begin
+            csr_exception_valid = 1;
+            csr_exception_cause = 7'b0000006; // illegal instruction
+        end
+        else if ((csr_addr_i == MEPC_ADDR) && (priv_lvl_o != PRIV_LVL_MACHINE)) begin
+            csr_exception_valid = 1;
+            csr_exception_cause = 7'b0000006; // illegal instruction
+        end
+    end
+
+endmodule

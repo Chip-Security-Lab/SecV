@@ -1,0 +1,35 @@
+module bootrom(
+  input wire clk_i,
+  input wire req_i,
+  input wire [31:0] addr_i,
+  output reg [31:0] rdata_o,
+  input wire we_i,
+  input wire [31:0] wdata_i
+);
+
+parameter RomSize = 256;
+
+reg [31:0] mem [0:RomSize-1];
+reg [31:0] raddr_q;
+
+// Read-Only Mode
+always @(posedge clk_i) begin
+  if (req_i) begin
+    raddr_q <= addr_i;
+    rdata_o <= (addr_i < RomSize) ? mem[addr_i] : 32'h0;
+  end
+end
+
+// Read-Write Mode
+always @(posedge clk_i) begin
+  if (req_i) begin
+    if (we_i) begin
+      mem[addr_i] <= wdata_i;
+    end else begin
+      raddr_q <= addr_i;
+      rdata_o <= (addr_i < RomSize) ? mem[addr_i] : 32'h0;
+    end
+  end
+end
+
+endmodule

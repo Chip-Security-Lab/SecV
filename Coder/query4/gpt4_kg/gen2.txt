@@ -1,0 +1,17 @@
+module csr_access_check #(parameter CSR_ADDR_WIDTH = 12, PRIV_LVL_WIDTH = 2)
+(
+input wire csr_we,
+input wire csr_read,
+input wire [CSR_ADDR_WIDTH-1:0] csr_addr_i,
+input wire [PRIV_LVL_WIDTH-1:0] priv_lvl_o,
+input wire debug_mode_q,
+output wire csr_exception_valid,
+output wire [1:0] csr_exception_cause
+);
+
+localparam ILLEGAL_INSTR = 2'b10;
+
+assign csr_exception_valid = (csr_we || csr_read) && ((priv_lvl_o < csr_addr_i[9:8]) || (csr_addr_i == 12'h341 && priv_lvl_o != 3'b00) || (csr_addr_i[11:4] == 8'h7b && !debug_mode_q)) ? 1'b1 : 1'b0;
+assign csr_exception_cause = csr_exception_valid ? ILLEGAL_INSTR : 2'b00;
+
+endmodule

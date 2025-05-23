@@ -1,0 +1,55 @@
+module csr_access_check(
+    input  wire csr_we,
+    input  wire csr_read,
+    input  wire [CSR_ADDR_WIDTH-1:0] csr_addr_i,
+    input  wire [PRIV_LVL_WIDTH-1:0] priv_lvl_o,
+    input  wire debug_mode_q,
+    output reg csr_exception_valid,
+    output reg [1:0] csr_exception_cause
+);
+
+parameter CSR_ADDR_WIDTH = 12;
+parameter PRIV_LVL_WIDTH = 2;
+
+reg [1:0] csr_priv_lvl;
+
+always @* begin
+    // Default values: no exception
+    csr_exception_valid = 1'b0;
+    csr_exception_cause = 2'b00;
+
+    // Check if there is a read or write request to a CSR
+    if (csr_we || csr_read) begin
+        // Decode privilege level required for CSR access
+        case (csr_addr_i[9:8])
+            2'b00: csr_priv_lvl = 2'b00; // User mode
+            2'b01: csr_priv_lvl = 2'b01; // Supervisor mode
+            2'b10: csr_priv_lvl = 2'b10; // Hypervisor mode
+            2'b11: csr_priv_lvl = 2'b11; // Machine mode
+            default: csr_priv_lvl = 2'b11; // Default to machine mode
+        endcase
+
+        // Privilege level check: If the current privilege level does not match the CSR's required level
+        if ((priv_lvl_o & csr_priv_lvl) != csr_priv_lvl) begin
+            csr_exception_valid = 1'b1;        // Set exception as valid
+            csr_exception_cause = 2'b01;      // Cause: illegal instruction
+        end
+
+        // Check for MEPC access (configurable behavior)
+        if (csr_addr_i == 12'h341) begin
+            // Case 1: Restrictive Access (selected)
+            if (priv_lvl_o != 2'b11) begin
+                csr_exception_valid = 1'b1;        // Set exception as valid
+                csr_exception_cause = 2'b01;      // Cause: illegal instruction
+            end
+        end
+
+        // Debug mode access check: If accessing debug-specific CSRs outside of debug mode
+        if (csr_addr_i[11:4] == 8'h7b && !debug_mode_q) begin
+            csr_exception_valid = 1'b1;        // Set exception as valid
+            csr_exception_cause = 2'b01;      // Cause: illegal instruction
+        end
+    end
+end
+
+endmodule

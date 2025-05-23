@@ -1,0 +1,51 @@
+module csr_access_check(
+    input  wire csr_we,
+    input  wire csr_read,
+    input  wire [CSR_ADDR_WIDTH-1:0] csr_addr_i,
+    input  wire [PRIV_LVL_WIDTH-1:0] priv_lvl_o,
+    input  wire debug_mode_q,
+    output reg csr_exception_valid,
+    output reg [6:0] csr_exception_cause
+);
+
+parameter CSR_ADDR_WIDTH = 12;
+parameter PRIV_LVL_WIDTH = 2;
+
+localparam MEPC_ADDR = 12'h341;
+localparam DEBUG_CSR_ADDR_RANGE = 12'h7B0; // adjust this range according to your system's debug CSR addresses
+
+reg [1:0] required_priv_lvl;
+
+always_comb begin
+    csr_exception_valid = 0;
+    csr_exception_cause = 0;
+
+    // Decode required privilege level from CSR address
+    required_priv_lvl = csr_addr_i[9:8];
+
+    // Check privilege level access
+    if (csr_we || csr_read) begin
+        if (required_priv_lvl > priv_lvl_o) begin
+            csr_exception_valid = 1;
+            csr_exception_cause = 7'b0000001; // illegal instruction
+        end
+
+        // MEPC access control (select one case)
+        // Case 1: Restrictive Access ( uncomment the following lines )
+        // if (csr_addr_i == MEPC_ADDR && priv_lvl_o != 2'b11) begin
+        //     csr_exception_valid = 1;
+        //     csr_exception_cause = 7'b0000001; // illegal instruction
+        // end
+
+        // Case 2: Relaxed Access ( uncomment the following lines )
+        // // No additional checks for MEPC access
+
+        // Debug mode access control
+        if (csr_addr_i >= DEBUG_CSR_ADDR_RANGE && !debug_mode_q) begin
+            csr_exception_valid = 1;
+            csr_exception_cause = 7'b0000001; // illegal instruction
+        end
+    end
+end
+
+endmodule

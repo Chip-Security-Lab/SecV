@@ -1,0 +1,44 @@
+module csr_access_check(
+    input  wire csr_we,
+    input  wire csr_read,
+    input  wire [CSR_ADDR_WIDTH-1:0] csr_addr_i,
+    input  wire [PRIV_LVL_WIDTH-1:0] priv_lvl_o,
+    input  wire debug_mode_q,
+    output reg csr_exception_valid,
+    output reg [6:0] csr_exception_cause
+);
+
+parameter CSR_ADDR_WIDTH = 12;
+parameter PRIV_LVL_WIDTH = 2;
+
+reg [1:0] csr_priv_lvl_req;
+
+assign csr_priv_lvl_req = csr_addr_i[9:8];
+
+always @(*) begin
+    csr_exception_valid = 0;
+    csr_exception_cause = 0;
+
+    if (csr_we || csr_read) begin
+        // Restrictive Access for MEPC (Case 1)
+        if (csr_addr_i == 12'h341) begin
+            if (priv_lvl_o != 2'b11) begin
+                csr_exception_valid = 1;
+                csr_exception_cause = 7'b0000001; // illegal instruction
+            end
+        end
+        else if (csr_priv_lvl_req != priv_lvl_o[1:0]) begin
+            csr_exception_valid = 1;
+            csr_exception_cause = 7'b0000001; // illegal instruction
+        end
+        else if ((csr_addr_i >= 12'h7A0 && csr_addr_i <= 12'h7AF) || 
+                 (csr_addr_i >= 12'h7C0 && csr_addr_i <= 12'h7CF)) begin
+            if (!debug_mode_q) begin
+                csr_exception_valid = 1;
+                csr_exception_cause = 7'b0000001; // illegal instruction
+            end
+        end
+    end
+end
+
+endmodule

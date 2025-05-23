@@ -1,0 +1,53 @@
+```verilog
+module csr_access_check #(
+    parameter CSR_ADDR_WIDTH = 12,
+    parameter PRIV_LVL_WIDTH = 2
+)(
+    input wire csr_we,
+    input wire csr_read,
+    input wire [CSR_ADDR_WIDTH-1:0] csr_addr_i,
+    input wire [PRIV_LVL_WIDTH-1:0] priv_lvl_o,
+    input wire debug_mode_q,
+    output wire csr_exception_valid,
+    output wire csr_exception_cause
+);
+    // Define common constants
+    localparam [CSR_ADDR_WIDTH-1:0] MEPC_ADDR    = 12'h341;
+    localparam [PRIV_LVL_WIDTH-1:0] MACH_PRIV_LVL = 2'b11;
+    localparam [PRIV_LVL_WIDTH-1:0] ADDR_PRIV_BITS = csr_addr_i[9:8];
+
+    // Initial configuration
+    assign csr_exception_valid  = 1'b0;
+    assign csr_exception_cause  = 1'b0;
+
+    // Check if CSR address is for MEPC
+    wire is_mepc = (csr_addr_i == MEPC_ADDR);
+
+    // Check if in highest privilege level (Machine mode)
+    wire is_mach_mode = (priv_lvl_o == MACH_PRIV_LVL);
+
+    // Check for illegal privilege level access.
+    // Case 1: Restrictive Access to MEPC
+    always @(csr_we or csr_read or csr_addr_i or priv_lvl_o)
+        if ((csr_we | csr_read) & is_mepc & ~is_mach_mode) begin
+            assign csr_exception_valid  = 1'b1;
+            assign csr_exception_cause  = 1'b1;  // Illegal Instruction
+        end
+
+    // Case 2: Accessible to all privilege levels
+    // Remove the code block above and uncomment the block below to switch to this case (Relaxed Access)
+    // always @(csr_we or csr_read or csr_addr_i or priv_lvl_o)
+    //    if ((csr_we | csr_read) & ~is_mach_mode & (ADDR_PRIV_BITS > priv_lvl_o)) begin
+    //        assign csr_exception_valid  = 1'b1;
+    //        assign csr_exception_cause  = 1'b1;  // Illegal Instruction
+    //    end
+
+    // Check for illegal debug mode access.
+    always @(csr_we or csr_read or csr_addr_i or debug_mode_q)
+        if ((csr_we | csr_read) & ~debug_mode_q & (csr_addr_i[11:10] == 2'b00)) begin
+            assign csr_exception_valid  = 1'b1;
+            assign csr_exception_cause  = 1'b1;  // Illegal Instruction
+        end
+
+endmodule
+```

@@ -1,0 +1,56 @@
+```verilog
+module csr_access_check #(
+    parameter CSR_ADDR_WIDTH = 12,
+    parameter PRIV_LVL_WIDTH = 2
+) (
+    input wire        csr_we,
+    input wire        csr_read,
+    input wire [CSR_ADDR_WIDTH-1:0]     csr_addr_i,
+    input wire [PRIV_LVL_WIDTH-1:0]     priv_lvl_i,
+    input wire        debug_mode_q,
+    output reg        csr_exception_valid,
+    output reg [31:0] csr_exception_cause
+);
+reg [1:0] csr_required_priv_lvl;
+
+// Decode required privilege level from CSR address bits [9:8]
+assign csr_required_priv_lvl = csr_addr_i[9:8];
+
+// Default behavior: no exception
+assign csr_exception_valid = 1'b0;
+assign csr_exception_cause = 32'h0;
+
+// Privilege level checking
+always @(posedge clk) begin
+    if (csr_we || csr_read) begin
+        if (csr_addr_i == 12'h341) begin
+            // MEPC - use one of the scenarios
+
+            // Scenario 1: Restrictive access - MEPC only accessible in Machine mode
+            if (priv_lvl_i != 2'b11) begin
+                csr_exception_valid <= 1'b1;
+                csr_exception_cause <= 32'h...; // Indicate illegal instruction
+            end
+        end else begin
+            // Normal access control based on CSR address
+            if (priv_lvl_i < csr_required_priv_lvl) begin
+                csr_exception_valid <= 1'b1;
+                csr_exception_cause <= 32'h...; // Indicate illegal instruction
+            end
+        end
+    end
+end
+
+// Debug Mode Access
+always @(posedge clk) begin
+    if (csr_we || csr_read) begin
+        // Debug-specific CSR access
+        if ((csr_addr_i >= 12'h7A0) && (debug_mode_q == 1'b0)) begin
+            csr_exception_valid <= 1'b1;
+            csr_exception_cause <= 32'h...; // Indicate illegal instruction
+        end
+    end
+end
+
+endmodule
+```

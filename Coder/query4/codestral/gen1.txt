@@ -1,0 +1,40 @@
+module csr_access_check(
+    input wire csr_we,
+    input wire csr_read,
+    input [CSR_ADDR_WIDTH-1:0] csr_addr_i,
+    input [PRIV_LVL_WIDTH-1:0] priv_lvl_o,
+    input debug_mode_q,
+    output reg csr_exception_valid,
+    output reg [31:0] csr_exception_cause
+);
+
+    // Parameters
+    parameter CSR_ADDR_WIDTH = 12;
+    parameter PRIV_LVL_WIDTH = 2;
+
+    // Privilege level decoding from CSR address
+    parameter [1:0] MEPC_PRIV_REQ = 2'b11;
+
+    // Decode privilege level from CSR address
+    always @(csr_addr_i) begin
+        case(csr_addr_i[9:8])
+            2'b11: // MEPC
+                // Perform strict privilege checking based on debug mode
+                if (debug_mode_q) // Debug mode
+                    csr_exception_valid = ~(priv_lvl_o == PRIV_LVL_WIDTH-1'b1);
+                else // Non-debug mode
+                    csr_exception_valid = ~(priv_lvl_o == MEPC_PRIV_REQ);
+            default: // Non-privilege-specific CSRs
+                csr_exception_valid = 1'b0;
+        endcase
+    end
+
+    // Generate exception cause for illegal access
+    always @(csr_we or csr_read) begin
+        if (csr_exception_valid)
+            csr_exception_cause = 32'b0; // Assign specific cause for illegal access
+        else
+            csr_exception_cause = 32'b0; // No exception
+    end
+
+endmodule

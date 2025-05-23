@@ -1,0 +1,45 @@
+```verilog
+module csr_access_check #(parameter CSR_ADDR_WIDTH = 12, PRIV_LVL_WIDTH = 2)
+(
+    input wire csr_we,
+    input wire csr_read,
+    input wire [CSR_ADDR_WIDTH-1:0] csr_addr_i,
+    input wire [PRIV_LVL_WIDTH-1:0] priv_lvl_i,
+    input wire debug_mode_q,
+
+    output reg csr_exception_valid,
+    output reg [3:0] csr_exception_cause
+);
+
+    localparam 
+        ILLEGAL_INSTR = 4'b0002;
+
+    always @(*) begin
+        // Default behavior - no exception
+        csr_exception_valid = 1'b0;
+        csr_exception_cause = ILLEGAL_INSTR; 
+
+        // Privilege level decoding from CSR address
+        if ((csr_addr_i[9:8] > priv_lvl_i) && (csr_addr_i != 12'h341)) begin
+            csr_exception_valid = 1'b1;
+        end
+
+        // Debug mode access control
+        if ((csr_addr_i[11:10] == 2'b11) && (debug_mode_q == 1'b0)) begin
+            csr_exception_valid = 1'b1;
+        end
+
+        // CSR address check for MEPC access
+        if (csr_addr_i == 12'h341) begin
+            // Uncomment one of the following cases 
+
+            // Case 1: Restrictive access to Machine Exception Program Counter (MEPC)
+            // if (priv_lvl_i != PRIV_LVL_WIDTH'3) begin csr_exception_valid = 1'b1; end
+
+            // Case 2: Relaxed access to Machine Exception Program Counter (MEPC)
+            // if (priv_lvl_i == PRIV_LVL_WIDTH'0) begin csr_exception_valid = 1'b0; end
+        end
+
+    end
+endmodule
+```
