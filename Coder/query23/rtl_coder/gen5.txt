@@ -1,0 +1,27 @@
+module glitchEx(
+input wire in0,
+input wire in1,
+input wire sel,
+output wire z
+);
+
+// Internal Signals
+wire not_sel;
+wire and_out1;
+wire and_out2;
+
+// Selector Logic
+assign not_sel = ~sel;
+
+// Intermediate Signal Calculations
+assign and_out1 = not_sel & in0;
+assign and_out2 = sel & in1;
+
+// Output Logic
+// Case 1: Standard Multiplexer
+// assign z = and_out1 | and_out2;
+
+// Case 2: Extended Logic
+assign z = and_out1 | and_out2 | (in0 & in1);
+
+endmodule
