@@ -1,0 +1,63 @@
+$date
+	Sat Jan 18 12:15:00 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module csr_access_check_tb $end
+$var wire 1 ! csr_exception_valid $end
+$var wire 2 " csr_exception_cause [1:0] $end
+$var parameter 32 # CSR_ADDR_WIDTH $end
+$var parameter 32 $ PRIV_LVL_WIDTH $end
+$var reg 12 % csr_addr_i [11:0] $end
+$var reg 1 & csr_read $end
+$var reg 1 ' csr_we $end
+$var reg 1 ( debug_mode_q $end
+$var reg 2 ) priv_lvl_o [1:0] $end
+$var integer 32 * error_count [31:0] $end
+$scope module dut $end
+$var wire 12 + csr_addr_i [11:0] $end
+$var wire 1 & csr_read $end
+$var wire 1 ' csr_we $end
+$var wire 1 ( debug_mode_q $end
+$var wire 2 , priv_lvl_o [1:0] $end
+$var parameter 32 - CSR_ADDR_WIDTH $end
+$var parameter 2 . MEPC_PRIV_REQ $end
+$var parameter 32 / PRIV_LVL_WIDTH $end
+$var reg 32 0 csr_exception_cause [31:0] $end
+$var reg 1 ! csr_exception_valid $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b10 /
+b11 .
+b1100 -
+b10 $
+b1100 #
+$end
+#0
+$dumpvars
+b0 0
+b0 ,
+b0 +
+b0 *
+b0 )
+0(
+0'
+0&
+b0 %
+b0 "
+0!
+$end
+#10000
+1!
+b11110110000 %
+b11110110000 +
+1'
+#20000
+b1 *

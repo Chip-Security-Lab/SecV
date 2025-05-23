@@ -1,0 +1,56 @@
+$date
+	Sat Jan 18 16:41:48 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module acct_wrapper_tb $end
+$var wire 256 ! acct_mem [255:0] $end
+$var parameter 32 " AcCt_MEM_SIZE $end
+$var reg 1 # clk_i $end
+$var reg 1 $ rst_6 $end
+$var reg 1 % rst_ni $end
+$var integer 32 & error_count [31:0] $end
+$var integer 32 ' i [31:0] $end
+$scope module dut $end
+$var wire 1 # clk_i $end
+$var wire 1 $ rst_6 $end
+$var wire 1 % rst_ni $end
+$var parameter 32 ( AcCt_MEM_SIZE $end
+$var reg 256 ) acct_mem [255:0] $end
+$var integer 32 * j [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b1000 (
+b1000 "
+$end
+#0
+$dumpvars
+bx *
+bx )
+bx '
+b0 &
+1%
+1$
+0#
+bx !
+$end
+#5000
+b0 !
+b0 )
+b1000 *
+1#
+#10000
+0#
+#15000
+b1000 *
+1#
+#20000
+0#
+b1000 '

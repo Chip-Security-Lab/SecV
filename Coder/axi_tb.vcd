@@ -1,0 +1,99 @@
+$date
+	Sat Jan 18 12:18:26 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module axi_tb $end
+$var wire 8 ! connectivity_map_o [7:0] $end
+$var parameter 32 " NB_MANAGER $end
+$var parameter 32 # NB_SUBORDINATE $end
+$var reg 24 $ access_ctrl_i [23:0] $end
+$var reg 3 % priv_lvl_i [2:0] $end
+$var integer 32 & error_count [31:0] $end
+$scope function flat_index $end
+$var integer 32 ' i [31:0] $end
+$var integer 32 ( j [31:0] $end
+$var integer 32 ) k [31:0] $end
+$upscope $end
+$scope module dut $end
+$var wire 24 * access_ctrl_i [23:0] $end
+$var wire 3 + priv_lvl_i [2:0] $end
+$var wire 8 , connectivity_map_o [7:0] $end
+$var parameter 32 - NB_MANAGER $end
+$var parameter 32 . NB_SUBORDINATE $end
+$scope begin genblk1[0] $end
+$var parameter 2 / i $end
+$scope begin genblk1[0] $end
+$var parameter 2 0 j $end
+$upscope $end
+$scope begin genblk1[1] $end
+$var parameter 2 1 j $end
+$upscope $end
+$upscope $end
+$scope begin genblk1[1] $end
+$var parameter 2 2 i $end
+$scope begin genblk1[0] $end
+$var parameter 2 3 j $end
+$upscope $end
+$scope begin genblk1[1] $end
+$var parameter 2 4 j $end
+$upscope $end
+$upscope $end
+$scope begin genblk1[2] $end
+$var parameter 3 5 i $end
+$scope begin genblk1[0] $end
+$var parameter 2 6 j $end
+$upscope $end
+$scope begin genblk1[1] $end
+$var parameter 2 7 j $end
+$upscope $end
+$upscope $end
+$scope begin genblk1[3] $end
+$var parameter 3 8 i $end
+$scope begin genblk1[0] $end
+$var parameter 2 9 j $end
+$upscope $end
+$scope begin genblk1[1] $end
+$var parameter 2 : j $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b1 :
+b0 9
+b11 8
+b1 7
+b0 6
+b10 5
+b1 4
+b0 3
+b1 2
+b1 1
+b0 0
+b0 /
+b100 .
+b10 -
+b100 #
+b10 "
+$end
+#0
+$dumpvars
+b10 ,
+b1 +
+b100010001 *
+b10 )
+b0 (
+b1 '
+b0 &
+b1 %
+b100010001 $
+b10 !
+$end
+#10000

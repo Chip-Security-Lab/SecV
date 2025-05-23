@@ -1,0 +1,79 @@
+$date
+	Sat Jan 18 16:41:14 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module jtag_auth_good_tb $end
+$var wire 2 ! state_q [1:0] $end
+$var wire 1 " pass_check $end
+$var reg 1 # clk_i $end
+$var reg 32 $ exp_hash [31:0] $end
+$var reg 1 % hashValid $end
+$var reg 32 & pass_hash [31:0] $end
+$var reg 1 ' rst_ni $end
+$var integer 32 ( error_count [31:0] $end
+$scope module dut $end
+$var wire 1 # clk_i $end
+$var wire 32 ) exp_hash [31:0] $end
+$var wire 1 % hashValid $end
+$var wire 1 " pass_check $end
+$var wire 32 * pass_hash [31:0] $end
+$var wire 1 ' rst_ni $end
+$var wire 2 + state_d [1:0] $end
+$var wire 2 , state_q [1:0] $end
+$var wire 1 - miss_pass_check_cnt_q $end
+$var parameter 2 . IDLE $end
+$var parameter 2 / LOCK $end
+$var parameter 2 0 PASS_CHK_VALID $end
+$var reg 32 1 exp_hash_reg [31:0] $end
+$var reg 1 2 hashValid_reg $end
+$var reg 32 3 miss_pass_check_cnt [31:0] $end
+$var reg 1 4 pass_check_reg $end
+$var reg 32 5 pass_hash_reg [31:0] $end
+$var reg 2 6 state [1:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b1 0
+b10 /
+b0 .
+$end
+#0
+$dumpvars
+b0 6
+bx 5
+04
+b0 3
+x2
+bx 1
+0-
+b0 ,
+b0 +
+b0 *
+b0 )
+b0 (
+0'
+b0 &
+0%
+b0 $
+0#
+0"
+b0 !
+$end
+#5000
+1#
+#10000
+0#
+#15000
+1#
+1'
+#20000
+0#
+#25000
+1#

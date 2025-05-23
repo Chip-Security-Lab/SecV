@@ -1,0 +1,81 @@
+$date
+	Sat Jan 18 16:40:15 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module register_lock_tb $end
+$var wire 6 ! reglk_mem [5:0] $end
+$var reg 1 " clk_i $end
+$var reg 1 # jtag_unlock $end
+$var reg 1 $ rst_ni $end
+$var integer 32 % error_count [31:0] $end
+$scope module dut $end
+$var wire 1 " clk_i $end
+$var wire 1 # jtag_unlock $end
+$var wire 1 & rst_9 $end
+$var wire 1 $ rst_ni $end
+$var reg 6 ' reglk_mem [5:0] $end
+$upscope $end
+$scope begin $ivl_for_loop0 $end
+$var integer 32 ( i [31:0] $end
+$upscope $end
+$scope begin $ivl_for_loop1 $end
+$var integer 32 ) i [31:0] $end
+$upscope $end
+$scope begin $ivl_for_loop2 $end
+$var integer 32 * i [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx *
+bx )
+bx (
+bx '
+z&
+b0 %
+0$
+0#
+0"
+bx !
+$end
+#5000
+b0 !
+b0 '
+1"
+#10000
+0"
+1$
+#15000
+1"
+#20000
+0"
+1#
+b110 (
+#25000
+1"
+#30000
+0"
+0#
+#35000
+1"
+#40000
+0"
+b110 )
+#45000
+1"
+#50000
+0"
+#55000
+1"
+#60000
+0"
+b110 *

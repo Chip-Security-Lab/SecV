@@ -1,0 +1,61 @@
+$date
+	Sat Jan 18 16:41:05 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module register_write_once_example_tb $end
+$var wire 16 ! Data_out [15:0] $end
+$var reg 1 " Clk $end
+$var reg 16 # Data_in [15:0] $end
+$var reg 1 $ global_resetn $end
+$var reg 1 % ip_resetn $end
+$var reg 1 & write $end
+$var integer 32 ' error_count [31:0] $end
+$scope module dut $end
+$var wire 1 " Clk $end
+$var wire 16 ( Data_in [15:0] $end
+$var wire 1 $ global_resetn $end
+$var wire 1 % ip_resetn $end
+$var wire 1 & write $end
+$var reg 16 ) Data_out [15:0] $end
+$var reg 1 * Write_once_status $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0*
+b0 )
+b0 (
+b0 '
+0&
+0%
+1$
+b0 #
+0"
+b0 !
+$end
+#5000
+1"
+#10000
+0"
+1%
+#15000
+1"
+#20000
+0"
+#25000
+1"
+#30000
+0"
+#35000
+1"
+#40000
+0"

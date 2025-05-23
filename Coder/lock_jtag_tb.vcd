@@ -1,0 +1,48 @@
+$date
+	Sat Jan 18 16:41:24 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module lock_jtag_tb $end
+$var wire 1 ! lock_jtag $end
+$var reg 1 " clk $end
+$var reg 1 # d $end
+$var reg 1 $ en $end
+$var reg 1 % reset $end
+$var integer 32 & error_count [31:0] $end
+$scope module dut $end
+$var wire 1 " clk $end
+$var wire 1 # d $end
+$var wire 1 $ en $end
+$var wire 1 % reset $end
+$var reg 1 ! lock_jtag $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 &
+1%
+1$
+1#
+0"
+0!
+$end
+#5000
+1!
+1"
+#10000
+0"
+0#
+0$
+#15000
+1"
+#20000
+0"

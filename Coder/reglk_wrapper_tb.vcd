@@ -1,0 +1,93 @@
+$date
+	Sat Jan 18 12:18:02 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module reglk_wrapper_tb $end
+$var wire 32 ! reglk_mem5 [31:0] $end
+$var wire 32 " reglk_mem4 [31:0] $end
+$var wire 32 # reglk_mem3 [31:0] $end
+$var wire 32 $ reglk_mem2 [31:0] $end
+$var wire 32 % reglk_mem1 [31:0] $end
+$var wire 32 & reglk_mem0 [31:0] $end
+$var parameter 32 ' REG_COUNT $end
+$var reg 1 ( clk_i $end
+$var reg 1 ) jtag_unlock $end
+$var reg 1 * rst_9 $end
+$var reg 1 + rst_ni $end
+$var integer 32 , error_count [31:0] $end
+$scope module dut $end
+$var wire 1 ( clk_i $end
+$var wire 1 ) jtag_unlock $end
+$var wire 1 * rst_9 $end
+$var wire 1 + rst_ni $end
+$var parameter 32 - REG_COUNT $end
+$var reg 32 . reglk_mem0 [31:0] $end
+$var reg 32 / reglk_mem1 [31:0] $end
+$var reg 32 0 reglk_mem2 [31:0] $end
+$var reg 32 1 reglk_mem3 [31:0] $end
+$var reg 32 2 reglk_mem4 [31:0] $end
+$var reg 32 3 reglk_mem5 [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b110 -
+b110 '
+$end
+#0
+$dumpvars
+bx 3
+bx 2
+bx 1
+bx 0
+bx /
+bx .
+b0 ,
+0+
+0*
+0)
+0(
+bx &
+bx %
+bx $
+bx #
+bx "
+bx !
+$end
+#5000
+b11111111111111111111111111111111 !
+b11111111111111111111111111111111 3
+b11111111111111111111111111111111 "
+b11111111111111111111111111111111 2
+b11111111111111111111111111111111 #
+b11111111111111111111111111111111 1
+b11111111111111111111111111111111 $
+b11111111111111111111111111111111 0
+b11111111111111111111111111111111 %
+b11111111111111111111111111111111 /
+b11111111111111111111111111111111 &
+b11111111111111111111111111111111 .
+1(
+#10000
+0(
+1+
+#15000
+1(
+#20000
+0(
+1*
+#25000
+1(
+#30000
+0(
+1)
+#35000
+1(
+#40000
+0(

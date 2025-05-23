@@ -1,0 +1,72 @@
+$date
+	Sat Jan 18 12:17:19 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module sha256_wrapper_tb $end
+$var wire 1 ! startHash $end
+$var wire 8 " data3 [7:0] $end
+$var wire 8 # data2 [7:0] $end
+$var wire 8 $ data1 [7:0] $end
+$var wire 8 % data0 [7:0] $end
+$var parameter 32 & REG_COUNT $end
+$var reg 1 ' clk_i $end
+$var reg 1 ( rst_3 $end
+$var reg 1 ) rst_ni $end
+$var integer 32 * error_count [31:0] $end
+$scope module dut $end
+$var wire 2 + addr [1:0] $end
+$var wire 1 ' clk_i $end
+$var wire 1 , hashValid $end
+$var wire 1 ( rst_3 $end
+$var wire 1 ) rst_ni $end
+$var wire 8 - wdata [7:0] $end
+$var wire 1 . we $end
+$var parameter 32 / REG_COUNT $end
+$var reg 8 0 data0 [7:0] $end
+$var reg 8 1 data1 [7:0] $end
+$var reg 8 2 data2 [7:0] $end
+$var reg 8 3 data3 [7:0] $end
+$var reg 1 ! startHash $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b100 /
+b100 &
+$end
+#0
+$dumpvars
+b0 3
+b0 2
+b0 1
+b0 0
+0.
+b0 -
+0,
+b0 +
+b0 *
+0)
+0(
+0'
+b0 %
+b0 $
+b0 #
+b0 "
+0!
+$end
+#5000
+1'
+#10000
+0'
+1(
+1)
+#15000
+1'
+#20000
+0'

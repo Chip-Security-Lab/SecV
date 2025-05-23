@@ -1,0 +1,33 @@
+$date
+	Sat Jan 18 16:40:27 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module fsm_tb $end
+$var wire 1 ! gpio_out $end
+$var reg 4 " register_address [3:0] $end
+$var integer 32 # error_count [31:0] $end
+$scope module dut $end
+$var wire 4 $ register_address [3:0] $end
+$var reg 1 ! gpio_out $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 $
+b0 #
+b0 "
+0!
+$end
+#10000
+b10 "
+b10 $
+#20000

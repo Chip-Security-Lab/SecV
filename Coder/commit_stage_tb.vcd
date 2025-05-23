@@ -1,0 +1,58 @@
+$date
+	Sat Jan 18 16:41:37 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module commit_stage_tb $end
+$var wire 32 ! exception_o_tval [31:0] $end
+$var wire 64 " exception_o_cause [63:0] $end
+$var reg 1 # amo_valid_commit_o $end
+$var reg 1 $ clk_i $end
+$var reg 2 % commit_instr_fu [1:0] $end
+$var reg 32 & commit_instr_tval [31:0] $end
+$var reg 64 ' csr_exception_cause [63:0] $end
+$var reg 1 ( csr_exception_valid $end
+$var reg 1 ) rst_ni $end
+$var integer 32 * error_count [31:0] $end
+$scope module dut $end
+$var wire 1 # amo_valid_commit_o $end
+$var wire 1 $ clk_i $end
+$var wire 2 + commit_instr_fu [1:0] $end
+$var wire 32 , commit_instr_tval [31:0] $end
+$var wire 64 - csr_exception_cause [63:0] $end
+$var wire 1 ( csr_exception_valid $end
+$var wire 1 ) rst_ni $end
+$var reg 64 . exception_o_cause [63:0] $end
+$var reg 32 / exception_o_tval [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx /
+bx .
+b0 -
+b0 ,
+b0 +
+b0 *
+1)
+0(
+b0 '
+b0 &
+b0 %
+0$
+0#
+bx "
+bx !
+$end
+#5000
+1$
+#10000
+0$

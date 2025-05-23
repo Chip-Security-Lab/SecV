@@ -1,0 +1,127 @@
+$date
+	Sat Jan 18 12:16:38 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module aes0_wrapper_tb $end
+$var wire 1 ! start $end
+$var wire 32 " p_c3 [31:0] $end
+$var wire 32 # p_c2 [31:0] $end
+$var wire 32 $ p_c1 [31:0] $end
+$var wire 32 % p_c0 [31:0] $end
+$var parameter 32 & ADDR_WIDTH $end
+$var parameter 32 ' DATA_WIDTH $end
+$var reg 8 ( address [7:0] $end
+$var reg 1 ) clk_i $end
+$var reg 1 * ct_valid $end
+$var reg 1 + en $end
+$var reg 4 , reglk_ctrl_i [3:0] $end
+$var reg 1 - rst_1 $end
+$var reg 1 . rst_ni $end
+$var reg 32 / wdata [31:0] $end
+$var reg 1 0 we $end
+$var integer 32 1 error_count [31:0] $end
+$scope module dut $end
+$var wire 8 2 address [7:0] $end
+$var wire 1 ) clk_i $end
+$var wire 1 * ct_valid $end
+$var wire 1 + en $end
+$var wire 4 3 reglk_ctrl_i [3:0] $end
+$var wire 1 - rst_1 $end
+$var wire 1 . rst_ni $end
+$var wire 1 ! start $end
+$var wire 32 4 wdata [31:0] $end
+$var wire 1 0 we $end
+$var wire 1 5 p_c3 $end
+$var wire 1 6 p_c2 $end
+$var wire 1 7 p_c1 $end
+$var wire 1 8 p_c0 $end
+$var parameter 32 9 ADDR_WIDTH $end
+$var parameter 32 : DATA_WIDTH $end
+$var reg 32 ; p_c0_int [31:0] $end
+$var reg 32 < p_c1_int [31:0] $end
+$var reg 32 = p_c2_int [31:0] $end
+$var reg 32 > p_c3_int [31:0] $end
+$var reg 1 ? reset_asserted $end
+$var reg 1 @ start_int $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b100000 :
+b1000 9
+b100000 '
+b1000 &
+$end
+#0
+$dumpvars
+x@
+x?
+bx >
+bx =
+bx <
+bx ;
+x8
+x7
+x6
+x5
+b0 4
+b0 3
+b0 2
+b0 1
+00
+b0 /
+0.
+1-
+b0 ,
+0+
+0*
+0)
+b0 (
+b0x %
+b0x $
+b0x #
+b0x "
+x!
+$end
+#5000
+b0 "
+05
+b0 #
+06
+b0 $
+07
+b0 %
+08
+1?
+0!
+0@
+b0 >
+b0 =
+b0 <
+b0 ;
+1)
+#10000
+0)
+1.
+#15000
+1)
+#20000
+0)
+10
+1+
+b1000 ,
+b1000 3
+b11011110101011011011111011101111 /
+b11011110101011011011111011101111 4
+b1000 (
+b1000 2
+#25000
+1)
+#30000
+0)

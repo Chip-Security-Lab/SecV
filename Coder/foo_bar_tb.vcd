@@ -1,0 +1,64 @@
+$date
+	Sat Jan 18 16:39:42 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module foo_bar_tb $end
+$var wire 32 ! data_out [31:0] $end
+$var parameter 32 " DATA_WIDTH $end
+$var reg 1 # clk $end
+$var reg 32 $ data_in [31:0] $end
+$var reg 32 % incoming_id [31:0] $end
+$var reg 1 & rst_n $end
+$var integer 32 ' error_count [31:0] $end
+$scope module dut $end
+$var wire 32 ( address [31:0] $end
+$var wire 1 # clk $end
+$var wire 32 ) data_in [31:0] $end
+$var wire 32 * incoming_id [31:0] $end
+$var wire 1 & rst_n $end
+$var reg 32 + acl_oh_allowlist [31:0] $end
+$var reg 1 , addr_auth $end
+$var reg 32 - data_out [31:0] $end
+$var reg 32 . q [31:0] $end
+$var reg 1 / write_auth $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b100000 "
+$end
+#0
+$dumpvars
+x/
+b0 .
+b0 -
+x,
+b1000001100010010 +
+b0 *
+b0 )
+bz (
+b0 '
+0&
+b0 %
+b0 $
+0#
+b0 !
+$end
+#5000
+1#
+#10000
+0#
+b10100101101001011010010110100101 $
+b10100101101001011010010110100101 )
+1&
+#15000
+0/
+1#
+#20000
+0#

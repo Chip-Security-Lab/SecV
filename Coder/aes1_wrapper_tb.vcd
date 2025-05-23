@@ -1,0 +1,46 @@
+$date
+	Sat Jan 18 16:40:59 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module aes1_wrapper_tb $end
+$var wire 8 ! core_key1 [7:0] $end
+$var wire 8 " core_key0 [7:0] $end
+$var parameter 32 # KEY_WIDTH $end
+$var reg 1 $ debug_mode_i $end
+$var reg 8 % key_reg0 [7:0] $end
+$var reg 8 & key_reg1 [7:0] $end
+$var integer 32 ' error_count [31:0] $end
+$scope module dut $end
+$var wire 1 $ debug_mode_i $end
+$var wire 8 ( key_reg0 [7:0] $end
+$var wire 8 ) key_reg1 [7:0] $end
+$var wire 8 * core_key1 [7:0] $end
+$var wire 8 + core_key0 [7:0] $end
+$var parameter 32 , KEY_WIDTH $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b1000 ,
+b1000 #
+$end
+#0
+$dumpvars
+b10101010 +
+b1010101 *
+b1010101 )
+b10101010 (
+b0 '
+b1010101 &
+b10101010 %
+0$
+b10101010 "
+b1010101 !
+$end
+#20000

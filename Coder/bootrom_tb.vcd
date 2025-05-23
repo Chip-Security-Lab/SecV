@@ -1,0 +1,62 @@
+$date
+	Sat Jan 18 16:39:54 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module bootrom_tb $end
+$var wire 32 ! rdata_o [31:0] $end
+$var parameter 32 " RomSize $end
+$var reg 32 # addr_i [31:0] $end
+$var reg 1 $ clk_i $end
+$var reg 1 % req_i $end
+$var integer 32 & error_count [31:0] $end
+$scope module dut $end
+$var wire 32 ' addr_i [31:0] $end
+$var wire 1 $ clk_i $end
+$var wire 1 % req_i $end
+$var wire 32 ( rdata_o [31:0] $end
+$var parameter 32 ) RomSize $end
+$var reg 8 * raddr_q [7:0] $end
+$upscope $end
+$scope begin $ivl_for_loop0 $end
+$var integer 32 + i [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b100000000 )
+b100000000 "
+$end
+#0
+$dumpvars
+b100000000 +
+bx *
+bx (
+b1000 '
+b0 &
+1%
+0$
+b1000 #
+bx !
+$end
+#5000
+b1 !
+b1 (
+b1 *
+1$
+#10000
+0$
+b10000 #
+b10000 '
+#15000
+b10 !
+b10 (
+b10 *
+1$
+#20000
+0$
