@@ -1,0 +1,26 @@
+```verilog
+module register_lock (
+  input wire clk_i,
+  input wire rst_ni,
+  input wire jtag_unlock,
+  input wire rst_9,  
+  output reg [5:0] reglk_mem
+);
+
+  always @(posedge clk_i) begin
+    // Uncomment the line depending on which reset logic applies to your system.
+    // If neither applies, comment both.
+
+    // Simplified Reset Logic
+    //if(~(rst_ni && ~jtag_unlock)) begin
+
+    // Extended Reset Logic
+    if(~(rst_ni && ~jtag_unlock && ~rst_9)) begin
+      integer i;
+      for (i=0; i<6; i=i+1) begin
+        reglk_mem[i] <= 0;
+      end
+    end
+  end
+endmodule
+```

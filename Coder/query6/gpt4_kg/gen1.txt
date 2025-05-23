@@ -1,0 +1,17 @@
+module register_lock(
+  input wire clk_i,
+  input wire rst_ni,
+  input wire jtag_unlock,
+  input wire rst_9,
+  output wire [5:0] reglk_mem
+);
+  integer i;
+
+  always @(posedge clk_i) begin
+    if (~(rst_ni && ~jtag_unlock && ~rst_9)) begin
+      for (i = 0; i < 6; i = i + 1) begin
+        reglk_mem[i] <= 6'h0;
+      end
+    end
+  end
+endmodule

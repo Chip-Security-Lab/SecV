@@ -1,0 +1,24 @@
+```verilog
+module register_lock(
+    input wire clk_i,
+    input wire rst_ni,
+    input wire rst_9,
+    input wire jtag_unlock,
+    output reg [5:0] reglk_mem
+);
+    
+    wire reset;
+
+    // Uncomment below line for Enhanced Reset Logic   
+    // assign reset = ~(rst_ni && ~jtag_unlock && ~rst_9);
+    
+    // Uncomment below line for Simplified Reset Logic   
+    // assign reset = ~(rst_ni && ~rst_9);
+
+    always @(posedge clk_i) begin
+        if (reset) begin
+            reglk_mem <= 6'b0;
+        end
+    end  
+endmodule
+```

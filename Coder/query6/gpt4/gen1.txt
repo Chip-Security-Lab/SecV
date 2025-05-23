@@ -1,0 +1,29 @@
+```verilog
+module register_lock(
+  input wire clk_i,
+  input wire rst_ni,
+  input wire jtag_unlock,
+  input wire rst_9, 
+  output wire [5:0] reglk_mem
+);
+  wire rst;
+  integer i;
+
+  // Select either simplified or extended reset logic
+  // Comment out the unused condition
+  
+  // Simplified reset logic
+  // assign rst = ~(rst_ni && ~jtag_unlock);
+
+  // Extended reset logic
+  assign rst = ~(rst_ni && ~jtag_unlock && ~rst_9);
+  
+  always @(posedge clk_i) begin
+    if (rst) begin
+      for (i = 0; i < 6; i = i + 1) 
+        reglk_mem[i] <= 0;
+    end
+  end
+  
+endmodule
+```

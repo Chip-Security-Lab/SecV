@@ -1,0 +1,20 @@
+module register_lock(
+    input wire clk_i,
+    input wire rst_ni,
+    input wire jtag_unlock,
+    input wire rst_9, // Optional
+    output reg [5:0] reglk_mem
+);
+
+    // Extended Reset Logic
+    wire reset_condition = ~(rst_ni && ~jtag_unlock && ~rst_9);
+
+    always @(posedge clk_i) begin
+        if (reset_condition) begin
+            for (int j = 0; j < 6; j = j + 1) begin
+                reglk_mem[j] <= 'h0;
+            end
+        end
+    end
+
+endmodule

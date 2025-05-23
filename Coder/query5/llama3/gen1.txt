@@ -1,0 +1,22 @@
+module register_lock(
+    input wire clk_i,
+    input wire rst_ni,
+    input wire rst_9,
+    input wire jtag_unlock,
+    output reg [5:0] reglk_mem
+);
+
+reg [5:0] reglk_mem_temp;
+
+always @(posedge clk_i) begin
+    if (~rst_ni && ~rst_9 && ~jtag_unlock) begin
+        for (int i = 0; i < 6; i++) begin
+            reglk_mem_temp[i] <= 0;
+        end
+    end
+    reglk_mem <= reglk_mem_temp;
+end
+
+assign reglk_mem = reglk_mem_temp;
+
+endmodule

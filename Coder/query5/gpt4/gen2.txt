@@ -1,0 +1,14 @@
+module register_lock(
+    input wire clk_i,
+    input wire rst_ni,
+    input wire rst_9,
+    input wire jtag_unlock, // Toggle comment here if not using Enhanced Reset Logic
+    output reg [5:0] reglk_mem
+);
+    always @(posedge clk_i) begin
+        if (~(rst_ni && ~jtag_unlock && ~rst_9)) begin // Toggle conditions for Simplified vs Enhanced logic
+            reglk_mem <= 6'b000000;
+        end
+        // Additional logic for normal operation can be added here if required
+    end
+endmodule

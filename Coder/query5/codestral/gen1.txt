@@ -1,0 +1,24 @@
+module register_lock(
+    input wire clk_i,
+    input wire rst_ni,
+    input wire rst_9,
+    input wire jtag_unlock,
+    output reg [5:0] reglk_mem
+);
+
+// Reset Logic (Choose one of the two approaches)
+// Simplified Reset Logic
+//always @(posedge clk_i) begin
+//    if (~(rst_ni && ~rst_9)) begin
+//        reglk_mem <= 6'b0;
+//    end
+//end
+
+// Enhanced Reset Logic
+always @(posedge clk_i) begin
+    if (~(rst_ni && ~jtag_unlock && ~rst_9)) begin
+        reglk_mem <= 6'b0;
+    end
+end
+
+endmodule
