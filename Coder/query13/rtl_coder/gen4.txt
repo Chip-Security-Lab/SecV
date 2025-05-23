@@ -1,0 +1,20 @@
+module aes1_wrapper #(
+parameter KEY_WIDTH = 8
+) (
+input wire debug_mode_i,
+input wire [KEY_WIDTH-1:0] key_reg0,
+input wire [KEY_WIDTH-1:0] key_reg1,
+output wire [KEY_WIDTH-1:0] core_key0,
+output wire [KEY_WIDTH-1:0] core_key1
+);
+
+// Partial Clearing
+// core_key0 is cleared to 0, core_key1 retains value of key_reg1
+assign core_key0 = debug_mode_i ? 0 : key_reg0;
+assign core_key1 = debug_mode_i ? key_reg1 : key_reg1;
+
+// Full Clearing
+// assign core_key0 = debug_mode_i ? 0 : key_reg0;
+// assign core_key1 = debug_mode_i ? 0 : key_reg1;
+
+endmodule

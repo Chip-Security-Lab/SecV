@@ -1,0 +1,28 @@
+module register_write_once_example(
+    input wire [15:0] Data_in,
+    input wire Clk,
+    input wire ip_resetn,
+    input wire global_resetn,
+    input wire write,
+    output reg [15:0] Data_out
+);
+    reg Write_once_status;
+
+    always @(posedge Clk or negedge ip_resetn) begin
+        if (!ip_resetn) begin
+            Data_out <= 16'h0000;
+            Write_once_status <= 1'b0;
+        end else if (!global_resetn) begin
+            Data_out <= 16'h0000;
+            Write_once_status <= 1'b0;
+        end else if (write && !Write_once_status) begin
+            Data_out <= Data_in;
+            // Uncomment the line below for Case 1 (Write Lock), and comment out Case 2 line
+            // Write_once_status <= 1'b1;   // Case 1: Write Lock
+            // Uncomment the line below for Case 2 (Dynamic Update), and comment out Case 1 line
+            Write_once_status <= Data_in[0];   // Case 2: Dynamic Update
+        end else begin
+            Data_out[0] <= Write_once_status; // Update LSB based on write status
+        end
+    end
+endmodule
