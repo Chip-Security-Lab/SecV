@@ -1,0 +1,46 @@
+module mod_exp #(parameter WIDTH = 32)
+(
+    input wire clk,
+    input wire rst,
+    input wire [WIDTH-1:0] base_in,
+    input wire [WIDTH-1:0] exponent_in,
+    input wire [WIDTH-1:0] modulus_in,
+    output reg [WIDTH-1:0] result_out
+);
+
+    reg [WIDTH-1:0] base_reg, exponent_reg, result_reg, mask_reg;
+    typedef enum {Idle, Compute} state_t;
+    reg state_t state;
+
+    always @(posedge clk or posedge rst) begin
+        if(rst) begin
+            base_reg <= 0;
+            exponent_reg <= 0;
+            result_reg <= 1;
+            mask_reg <= 1;
+            state <= Idle;
+        end else begin
+            case(state)
+                Idle: begin
+                    base_reg <= base_in;
+                    exponent_reg <= exponent_in;
+                    state <= Compute;
+                end
+                Compute: begin
+                    if(exponent_reg == 0) begin
+                        state <= Idle;
+                    end else begin
+                        if(exponent_reg[0] == 1) begin
+                            result_reg <= (result_reg * base_reg) % modulus_in;
+                        end
+                        base_reg <= (base_reg * base_reg) % modulus_in;
+                        exponent_reg <= exponent_reg >> 1;
+                    end
+                end
+            endcase
+        end
+    end
+
+    assign result_out = (state == Idle) ? result_reg : 0;
+
+endmodule

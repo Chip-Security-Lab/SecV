@@ -1,0 +1,25 @@
+module acct_wrapper #(
+    parameter AcCt_MEM_SIZE = 8
+) (
+    input wire clk_i,
+    input wire rst_ni,
+    input wire rst_6,
+    output wire [(AcCt_MEM_SIZE * 32) - 1 : 0] acct_mem
+);
+    // Internal Memory
+    reg [31:0] internal_mem [AcCt_MEM_SIZE-1 : 0];
+
+    genvar j;
+    generate
+    for (j = 0; j < AcCt_MEM_SIZE; j = j+1) begin
+        always @(posedge clk_i or negedge rst_ni) begin
+            if (~rst_ni && ~rst_6)
+                internal_mem[j] <= 32'h00000000; // For Case 1: Default Permissions Disabled 
+                //internal_mem[j] <= 32'hFFFFFFFF; // For Case 2: Default Permissions Enabled
+            else
+                if (~internal_mem[j]) internal_mem[j] <= internal_mem[j];
+        end
+        assign acct_mem[j*32 +: 32] = internal_mem[j];
+    end
+    endgenerate
+endmodule

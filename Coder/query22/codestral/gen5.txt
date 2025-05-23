@@ -1,0 +1,42 @@
+module mod_exp(
+    input wire clk,
+    input wire rst,
+    input wire [WIDTH-1:0] base_in,
+    input wire [WIDTH-1:0] exponent_in,
+    input wire [WIDTH-1:0] modulus_in,
+    output reg [WIDTH-1:0] result_out
+);
+
+parameter WIDTH = 32;
+parameter IDLE = 2'b00, UPDATE = 2'b01;
+
+reg [WIDTH-1:0] base_reg, exponent_reg, result_reg, mask_reg;
+reg [1:0] state;
+
+always @(posedge clk or negedge rst) begin
+    if (~rst) begin
+        result_reg <= 0;
+        mask_reg <= 0;
+        base_reg <= 0;
+        exponent_reg <= 0;
+        state <= IDLE;
+    end
+    else if (state == IDLE) begin
+        base_reg <= base_in;
+        exponent_reg <= exponent_in;
+        result_reg <= 0;
+        mask_reg <= 0;
+        state <= UPDATE;
+    end
+    else if (state == UPDATE) begin
+        if (exponent_reg[0])
+            result_reg <= (result_reg * base_reg) % modulus_in;
+        exponent_reg <= exponent_reg >> 1;
+        if (exponent_reg == 0)
+            state <= IDLE;
+    end
+end
+
+assign result_out = result_reg;
+
+endmodule

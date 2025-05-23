@@ -1,0 +1,24 @@
+module acct_wrapper(
+    input wire clk_i,
+    input wire rst_ni,
+    input wire rst_6,
+    output reg [31:0] acct_mem
+);
+
+parameter AcCt_MEM_SIZE = 8;
+
+reg [AcCt_MEM_SIZE*32-1:0] acct_mem_reg;
+
+assign acct_mem = acct_mem_reg;
+
+always @(posedge clk_i) begin
+    if (~(rst_ni && ~rst_6)) begin
+        // Select Case 1: Default Permissions Disabled
+        // Initialize all access control registers to 32'h00000000
+        for (int j = 0; j < AcCt_MEM_SIZE; j++) begin
+            acct_mem_reg[j*32 +: 32] <= 32'h00000000;
+        end
+    end
+end
+
+endmodule

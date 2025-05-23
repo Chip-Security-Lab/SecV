@@ -1,0 +1,66 @@
+module mod_exp
+#(
+  parameter WIDTH = 32
+)
+(
+  input wire clk,
+  input wire rst,
+  input wire [WIDTH-1:0] base_in,
+  input wire [WIDTH-1:0] exponent_in,
+  input wire [WIDTH-1:0] modulus_in,
+  output wire [WIDTH-1:0] result_out
+);
+
+  reg [WIDTH-1:0] result_reg, base_reg, exponent_reg;
+  reg [WIDTH-1:0] mask_reg;  // Optional: only used in Case 2
+  reg [2:0] state;
+
+  localparam IDLE  = 3'b000;
+  localparam UPDATE = 3'b001;
+
+  // State Machine and Computation Logic
+  always @(posedge clk or posedge rst) begin
+    if (rst) begin
+      result_reg <= 'b1;    // Default neutral multiply
+      base_reg <= 'b0;
+      exponent_reg <= 'b0;
+      state <= IDLE;
+      // Optional: only needed in Case 2
+      mask_reg <= 'b1;  // Default neutral multiply
+    end
+    else begin
+      case(state) 
+        IDLE: begin
+          result_reg <= 'b1; // Default neutral multiply
+          base_reg <= base_in;
+          exponent_reg <= exponent_in;
+          state <= UPDATE;
+          // Optional: only needed in Case 2
+          mask_reg <= 'b1;  // Default neutral multiply
+        end
+
+        UPDATE: begin
+          if(exponent_reg == 'b0) begin
+            state <= IDLE;
+          end
+          else begin
+            if(exponent_reg[0]) begin
+              // Case 1 or Case 2
+              result_reg <= (result_reg * base_reg) % modulus_in;
+            end
+            // Optional: only needed in Case 2
+            else begin
+              mask_reg <= (mask_reg * base_reg) % modulus_in;
+            end
+            base_reg <= (base_reg * base_reg) % modulus_in;
+            exponent_reg <= exponent_reg >> 1;
+          end
+        end
+      endcase
+    end
+  end
+
+  // Output Connections
+  assign result_out = result_reg;
+
+endmodule

@@ -1,0 +1,30 @@
+module acct_wrapper #(
+  parameter AcCt_MEM_SIZE = 8
+) (
+  input wire clk_i,
+  input wire rst_ni,
+  input wire rst_6,
+  output reg [AcCt_MEM_SIZE*32-1:0] acct_mem
+);
+
+  // Reset Initialization Behavior
+  // Case 1: Default Permissions Disabled
+  // Case 2: Default Permissions Enabled
+  // Select the appropriate behavior based on system requirements
+
+  // Access Control Initialization
+  always @(posedge clk_i or negedge rst_ni or negedge rst_6) begin
+    if (~(rst_ni && ~rst_6)) begin
+      for (int j = 0; j < AcCt_MEM_SIZE; j = j + 1) begin
+        acct_mem[j*32 +: 32] <= 32'h00000000; // Case 1
+        // acct_mem[j*32 +: 32] <= 32'hFFFFFFFF; // Case 2
+      end
+    end
+  end
+
+  // Clocked Operation
+  always @(posedge clk_i) begin
+    // Update acct_mem vector
+  end
+
+endmodule

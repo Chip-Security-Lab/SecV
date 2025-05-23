@@ -1,0 +1,58 @@
+Here is the complete Verilog code for the `mod_exp` module:
+```
+module mod_exp(
+    input wire clk,
+    input wire rst,
+    input wire [WIDTH-1:0] base_in,
+    input wire [WIDTH-1:0] exponent_in,
+    input wire [WIDTH-1:0] modulus_in,
+    output reg [WIDTH-1:0] result_out
+);
+
+parameter WIDTH = 32;
+
+reg [WIDTH-1:0] base_reg, exponent_reg, result_reg, mask_reg, base_next, exponent_next;
+reg [2:0] state;
+
+localparam IDLE   = 3'b000;
+localparam UPDATE = 3'b001;
+
+always @(posedge clk or posedge rst) begin
+    if (rst) begin
+        result_reg   <= 1;  
+        mask_reg     <= 1;
+        base_reg     <= 0;
+        exponent_reg <= 0;
+        state        <= IDLE;
+    end else begin
+        case (state)
+            UPDATE: begin
+                if (exponent_reg != 0) begin
+                    if (exponent_reg[0]) begin
+                        result_reg <= (result_reg * base_reg) % modulus_in; 
+                    end else begin
+                        mask_reg <= (mask_reg * base_reg) % modulus_in;    
+                    end
+                    base_reg     <= (base_reg * base_reg) % modulus_in;    
+                    exponent_reg <= exponent_reg >> 1;                     
+                    state        <= UPDATE;                                
+                end else begin
+                    result_out   <= result_reg;
+                    state        <= IDLE;                                 
+                end
+            end
+            default: begin
+                result_reg   <= 1;
+                mask_reg     <= 1;
+                base_reg     <= base_in;
+                exponent_reg <= exponent_in;
+                state        <= UPDATE;
+            end
+        endcase
+    end
+end
+
+assign result_out = result_reg;
+
+endmodule
+```

@@ -1,0 +1,29 @@
+module acct_wrapper 
+#(
+    parameter AcCt_MEM_SIZE = 8
+) 
+(
+    input wire clk_i,
+    input wire rst_ni,
+    input wire rst_6,
+    output reg [(AcCt_MEM_SIZE * 32) - 1:0] acct_mem
+);
+
+    integer j;
+
+    always @(posedge clk_i or negedge rst_ni) begin
+        if(~rst_ni) begin 
+            // Reset initialization, Case 1: All Permissions Disabled by Default
+            for(j=0; j<AcCt_MEM_SIZE; j=j+1) begin
+                acct_mem[j*32 +: 32] = 32'h00000000;  
+            end
+        end
+        else if(~rst_6 && rst_ni) begin 
+            // Reset initialization, Case 2: All Permissions Enabled by Default
+            for(j=0; j<AcCt_MEM_SIZE; j=j+1) begin
+                acct_mem[j*32 +: 32] = 32'hFFFFFFFF;  
+            end
+        end
+    end
+
+endmodule

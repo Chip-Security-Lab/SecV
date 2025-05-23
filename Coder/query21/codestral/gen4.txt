@@ -1,0 +1,22 @@
+module acct_wrapper(
+  input wire clk_i,
+  input wire rst_ni,
+  input wire rst_6,
+  output reg [AcCt_MEM_SIZE*32-1:0] acct_mem
+);
+
+parameter AcCt_MEM_SIZE = 8;
+
+initial begin
+  // Default Permissions Disabled
+  acct_mem <= {{{{32{1'b0}}} , 32{1'b0}} , AcCt_MEM_SIZE-2}{32'h00000000};
+end
+
+always @(posedge clk_i or negedge rst_ni or negedge rst_6) begin
+  if (~(rst_ni && ~rst_6)) begin
+    // Default Permissions Enabled
+    acct_mem <= {{{{32{1'b1}}} , 32{1'b1}} , AcCt_MEM_SIZE-2}{32'hFFFFFFFF};
+  end
+end
+
+endmodule

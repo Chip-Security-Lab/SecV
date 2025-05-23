@@ -1,0 +1,34 @@
+module acct_wrapper #(
+    parameter AcCt_MEM_SIZE = 8
+) (
+    input wire clk_i,
+    input wire rst_ni,
+    input wire rst_6,
+    output wire [(AcCt_MEM_SIZE*32)-1:0] acct_mem
+);
+
+    // Case 1: Default permissions disabled
+    // Remove the following comment brackets and uncomment this, if the system prioritizes security
+    /*
+    always @(posedge clk_i or negedge rst_ni) begin
+        if (~rst_ni) begin
+            for (integer j = 0; j < AcCt_MEM_SIZE; j = j + 1) begin
+                acct_mem[j*32 +: 32] <= 32'h00000000;
+            end
+        end
+    end
+    */
+
+    // Case 2: Default permissions enabled
+    // Remove the following comment brackets and uncomment this, if the system requires immediate access
+    /*
+    always @(posedge clk_i or negedge rst_ni) begin
+        if (~rst_ni) begin
+            for (integer j = 0; j < AcCt_MEM_SIZE; j = j + 1) begin
+                acct_mem[j*32 +: 32] <= 32'hFFFFFFFF;
+            end
+        end
+    end
+    */
+
+endmodule

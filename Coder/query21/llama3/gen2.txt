@@ -1,0 +1,19 @@
+module acct_wrapper(
+    input wire clk_i,
+    input wire rst_ni,
+    input wire rst_6,
+    output reg [31:0] acct_mem []
+);
+
+parameter AcCt_MEM_SIZE = 8;
+
+always @(posedge clk_i) begin
+    if (~rst_ni && ~rst_6) begin
+        // Case 1: Default Permissions Disabled
+        for (int j = 0; j < AcCt_MEM_SIZE; j = j + 1) begin
+            acct_mem[j] <= 32'h00000000;
+        end
+    end
+end
+
+endmodule
