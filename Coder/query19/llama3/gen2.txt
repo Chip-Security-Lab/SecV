@@ -1,0 +1,28 @@
+module commit_stage(
+    input wire clk_i,
+    input wire rst_ni,
+    input wire csr_exception_valid,
+    input wire [63:0] csr_exception_cause,
+    input wire [1:0] commit_instr_fu,
+    input wire [31:0] commit_instr_tval,
+    input wire amo_valid_commit_o,
+    output reg [63:0] exception_o_cause,
+    output reg [31:0] exception_o_tval
+);
+
+always @(posedge clk_i or negedge rst_ni) begin
+    if (~rst_ni) begin
+        exception_o_cause <= 0;
+        exception_o_tval <= 0;
+    end else begin
+        if (csr_exception_valid && csr_exception_cause[63] && commit_instr_fu != 2'b10 && ~amo_valid_commit_o) begin
+            exception_o_cause <= csr_exception_cause;
+            exception_o_tval <= commit_instr_tval;
+        end else begin
+            exception_o_cause <= 0;
+            exception_o_tval <= 0;
+        end
+    end
+end
+
+endmodule

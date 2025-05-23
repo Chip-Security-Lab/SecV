@@ -1,0 +1,27 @@
+module axi 
+#(
+  parameter NB_SUBORDINATE = 4, 
+  parameter NB_MANAGER = 2
+)
+(
+  input wire [(NB_SUBORDINATE*NB_MANAGER)*3-1:0] access_ctrl_i,
+  input wire [2:0] priv_lvl_i,
+  output wire [(NB_SUBORDINATE*NB_MANAGER)-1:0] connectivity_map_o
+);
+
+generate
+  genvar i, j;
+  for(i = 0; i < NB_SUBORDINATE; i = i + 1) begin : gen_subordinate
+    for(j = 0; j < NB_MANAGER; j = j + 1) begin : gen_manager
+    
+      // Shared Permissions
+      // assign connectivity_map_o[i * NB_MANAGER + j] = access_ctrl_i[i * 3 + priv_lvl_i];
+      
+      // Independent Permissions
+      assign connectivity_map_o[i * NB_MANAGER + j] = access_ctrl_i[(i * NB_MANAGER + j) * 3 + priv_lvl_i];
+      
+    end
+  end
+endgenerate
+
+endmodule

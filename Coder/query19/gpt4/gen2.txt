@@ -1,0 +1,35 @@
+module commit_stage (
+    input wire clk_i,
+    input wire rst_ni,
+    input wire csr_exception_valid,
+    input wire [63:0] csr_exception_cause,
+    input wire [1:0] commit_instr_fu,
+    input wire [31:0] commit_instr_tval,
+    input wire amo_valid_commit_o,
+    output wire [63:0] exception_o_cause,
+    output wire [31:0] exception_o_tval
+);
+    
+    // Synchronous Reset
+    always @(posedge clk_i or negedge rst_ni) begin
+        if (!rst_ni) begin
+            exception_o_cause <= 64'd0;
+            exception_o_tval <= 32'd0;
+        end
+    end
+
+    // Exception Handling Combinational Logic - Case 1
+    always @(*) begin
+        if ((csr_exception_valid == 1'b1) && 
+            (csr_exception_cause[63] == 1'b1) &&
+            (commit_instr_fu != 2'b10) &&
+            (amo_valid_commit_o == 1'b0)) 
+        {
+            exception_o_cause = csr_exception_cause;
+            exception_o_tval = commit_instr_tval;
+        } else {
+            exception_o_cause = 64'd0;
+            exception_o_tval = 32'd0;
+        }
+    end
+endmodule
