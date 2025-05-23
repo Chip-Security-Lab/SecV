@@ -1,0 +1,39 @@
+module fsm_1(
+    input wire [2:0] user_input,
+    input wire clk,
+    input wire rst_n,
+    output reg [2:0] out
+);
+    reg [1:0] current_state, next_state;
+
+    // State Definitions
+    localparam S0 = 2'h0;
+    localparam S1 = 2'h1;
+    localparam S2 = 2'h2;
+    localparam S3 = 2'h3;
+
+    // State transition logic based on input and current state
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            current_state <= S0;
+        end else begin
+            current_state <= next_state;
+        end
+    end
+
+    // Next state logic based on user input
+    always @(*) begin
+        case (user_input)
+            3'h3: next_state = S3;
+            3'h4: next_state = S2;
+            3'h5: next_state = S1;
+            default: next_state = current_state;
+        endcase
+    end
+
+    // Output logic
+    always @(*) begin
+        out = {1'b1, current_state};
+    end
+
+endmodule

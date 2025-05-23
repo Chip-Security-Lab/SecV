@@ -1,0 +1,16 @@
+module fsm(
+  input wire [3:0] register_address,
+  output wire gpio_out
+);
+
+// Output default state
+assign gpio_out = 1'b0;
+
+always @(*) begin
+  case(register_address)
+    4'b1111: gpio_out = 1'b1;
+    default: gpio_out = 1'b0;
+  endcase
+end
+
+endmodule

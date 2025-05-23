@@ -1,0 +1,26 @@
+module fsm_1(
+    input wire clk,
+    input wire rst_n,
+    input wire [2:0] user_input,
+    output reg [2:0] out
+);
+    reg [1:0] state;
+
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            state <= 2'h0;
+        end else begin
+            case (user_input)
+                3'h3: state <= 2'h3;
+                3'h4: state <= 2'h2;
+                3'h5: state <= 2'h1;
+                default: state <= 2'h0;
+            endcase
+        end
+    end
+
+    always @(*) begin
+        out[2] = 1'b1;
+        out[1:0] = state;
+    end
+endmodule

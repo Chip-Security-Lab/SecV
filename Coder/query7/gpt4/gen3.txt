@@ -1,0 +1,23 @@
+module fsm_1(
+    input wire clk,
+    input wire rst_n,
+    input wire [2:0] user_input,
+    output wire [2:0] out
+);
+    reg [1:0] fsm_state;
+    // Synchronous FSM state transition logic
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            // Reset condition
+            fsm_state <= 2'h0;
+        end
+        else case(user_input)
+            3'h3: fsm_state <= 2'h3;
+            3'h4: fsm_state <= 2'h2;
+            3'h5: fsm_state <= 2'h1;
+            default: fsm_state <= fsm_state;
+        endcase
+    end
+    // Combinational output logic
+    assign out = {1'b1, fsm_state};
+endmodule

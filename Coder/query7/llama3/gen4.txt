@@ -1,0 +1,29 @@
+module fsm_1(
+    input wire clk,
+    input wire rst_n,
+    input wire [2:0] user_input,
+    output reg [2:0] out
+);
+
+reg [1:0] state, next_state;
+
+always @(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
+        state <= 2'h0;
+    end else begin
+        state <= next_state;
+    end
+end
+
+always @* begin
+    case (user_input)
+        3'h3: next_state = 2'h3;
+        3'h4: next_state = 2'h2;
+        3'h5: next_state = 2'h1;
+        default: next_state = state;
+    endcase
+end
+
+assign out = {1'b1, state};
+
+endmodule

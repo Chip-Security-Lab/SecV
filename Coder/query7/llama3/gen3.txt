@@ -1,0 +1,50 @@
+module fsm_1(
+    input wire [2:0] user_input,
+    input wire clk,
+    input wire rst_n,
+    output reg [2:0] out
+);
+
+reg [1:0] state, next_state;
+
+always @(posedge clk or negedge rst_n) begin
+    if (~rst_n) begin
+        state <= 2'h0;
+    end else begin
+        state <= next_state;
+    end
+end
+
+always @* begin
+    case (state)
+        2'h0: begin
+            if (user_input == 3'h3) next_state = 2'h3;
+            else if (user_input == 3'h4) next_state = 2'h2;
+            else if (user_input == 3'h5) next_state = 2'h1;
+            else next_state = 2'h0;
+        end
+        2'h1: begin
+            if (user_input == 3'h3) next_state = 2'h3;
+            else if (user_input == 3'h4) next_state = 2'h2;
+            else if (user_input == 3'h5) next_state = 2'h0;
+            else next_state = 2'h1;
+        end
+        2'h2: begin
+            if (user_input == 3'h3) next_state = 2'h3;
+            else if (user_input == 3'h4) next_state = 2'h0;
+            else if (user_input == 3'h5) next_state = 2'h1;
+            else next_state = 2'h2;
+        end
+        2'h3: begin
+            if (user_input == 3'h3) next_state = 2'h0;
+            else if (user_input == 3'h4) next_state = 2'h2;
+            else if (user_input == 3'h5) next_state = 2'h1;
+            else next_state = 2'h3;
+        end
+        default: next_state = 2'h0;
+    endcase
+end
+
+assign out = {1'b1, state};
+
+endmodule

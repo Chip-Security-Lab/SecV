@@ -1,0 +1,16 @@
+module fsm(
+    input wire [3:0] register_address,
+    output reg gpio_out
+);
+    always @(*) begin
+        gpio_out = 0; // Default state is 0
+        case (register_address)
+            4'b0001: gpio_out = 1;
+            4'b0010: gpio_out = 1;
+            4'b0100: gpio_out = 1;
+            4'b1000: gpio_out = 1;
+            4'b1111: gpio_out = 0; // No special handling for 4'b1111
+            default: gpio_out = 0; // Ensure unhandled cases are set to 0
+        endcase
+    end
+endmodule

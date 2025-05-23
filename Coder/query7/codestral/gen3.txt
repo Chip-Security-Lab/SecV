@@ -1,0 +1,91 @@
+module fsm_1(
+  input wire clk,
+  input wire rst_n,
+  input wire [2:0] user_input,
+  output reg [2:0] out
+);
+
+  parameter IDLE = 2'b00;
+  parameter STATE1 = 2'b01;
+  parameter STATE2 = 2'b10;
+  parameter STATE3 = 2'b11;
+  reg [1:0] state;
+
+  always @(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
+      state <= IDLE;
+      out <= 3'h0;
+    end else begin
+      case (state)
+        IDLE:
+          if (user_input == 3'h3)
+            begin
+              state <= STATE3;
+              out <= 3'b111;
+            end
+          else if (user_input == 3'h4)
+            begin
+              state <= STATE2;
+              out <= 3'b101;
+            end
+          else if (user_input == 3'h5)
+            begin
+              state <= STATE1;
+              out <= 3'b011;
+            end
+        STATE1:
+          if (user_input == 3'h3)
+            begin
+              state <= STATE3;
+              out <= 3'b111;
+            end
+          else if (user_input == 3'h4)
+            begin
+              state <= STATE2;
+              out <= 3'b101;
+            end
+          else if (user_input == 3'h5)
+            begin
+              state <= IDLE;
+              out <= 3'b001;
+            end
+        STATE2:
+          if (user_input == 3'h3)
+            begin
+              state <= STATE3;
+              out <= 3'b111;
+            end
+          else if (user_input == 3'h4)
+            begin
+              state <= IDLE;
+              out <= 3'b001;
+            end
+          else if (user_input == 3'h5)
+            begin
+              state <= STATE1;
+              out <= 3'b010;
+            end
+        STATE3:
+          if (user_input == 3'h3)
+            begin
+              state <= IDLE;
+              out <= 3'b001;
+            end
+          else if (user_input == 3'h4)
+            begin
+              state <= STATE2;
+              out <= 3'b100;
+            end
+          else if (user_input == 3'h5)
+            begin
+              state <= STATE1;
+              out <= 3'b011;
+            end
+        default:
+          state <= IDLE;
+          out <= 3'b000;
+      endcase
+    end
+  end
+
+endmodule
