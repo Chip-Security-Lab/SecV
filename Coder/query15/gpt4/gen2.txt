@@ -1,0 +1,45 @@
+module sha256_wrapper #(parameter REG_COUNT = 4)(
+input wire clk_i, 
+input wire rst_ni, 
+input wire rst_3, 
+input wire [7:0] wdata, 
+input wire [1:0] addr, 
+input wire we, 
+input wire hashValid, 
+output wire startHash, 
+output wire [7:0] data0, 
+output wire [7:0] data1, 
+output wire [7:0] data2, 
+output wire [7:0] data3
+);
+
+// Internal registers for data storage
+reg [7:0] data_reg [0:REG_COUNT-1];
+reg hashValid_r;
+
+assign startHash = (addr == 2'b00) & we ? wdata[0] : 1'b0;
+assign data0 = data_reg[0];
+assign data1 = data_reg[1];
+assign data2 = data_reg[2];
+assign data3 = data_reg[3];
+
+always @(posedge clk_i or negedge rst_ni or negedge rst_3) begin
+    if (!rst_ni || !rst_3) begin
+        data_reg <= 0;
+        hashValid_r <= 0;
+    end else if (we) begin
+        case (addr)
+            2'b00: data_reg[0] <= wdata; 
+            2'b01: data_reg[1] <= wdata;
+            2'b10: data_reg[2] <= wdata;
+            2'b11: data_reg[3] <= wdata;
+        endcase
+    end
+
+    if (hashValid && !hashValid_r) begin // Edge detection
+        data_reg <= 0; // Clearing content
+    end 
+
+    hashValid_r <= hashValid;
+end
+endmodule

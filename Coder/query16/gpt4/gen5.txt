@@ -1,0 +1,73 @@
+module jtag_auth_good(
+    input wire clk_i,
+    input wire rst_ni,
+    input wire [31:0] pass_hash,
+    input wire [31:0] exp_hash,
+    input wire hashValid,
+    output reg pass_check,
+    output reg [2:0] state_q,
+    output reg [2:0] state_d,
+    output reg [2:0] miss_pass_check_cnt_q
+);
+// State Encoding
+localparam [
+    IDLE = 3'b000,
+    PASS_CHK_VALID = 3'b001,
+    LOCK = 3'b010
+};
+
+// FSM state register
+always @(posedge clk_i or negedge rst_ni) begin
+    if(~rst_ni) begin
+        state_q <= IDLE;
+    end else begin
+        state_q <= state_d;
+    end
+end
+
+// FSM transition logic
+always @(state_q or hashValid or pass_hash or exp_hash) begin
+    state_d = state_q;
+    case(state_q)
+        IDLE: begin
+            if(hashValid)
+                state_d = PASS_CHK_VALID;
+        end
+        PASS_CHK_VALID: begin
+            if(pass_hash == exp_hash)
+                state_d = IDLE;
+            else
+                state_d = LOCK;
+        end
+        LOCK: begin
+            if(~hashValid)
+                state_d = IDLE;
+        end
+    endcase
+end
+
+// FSM output logic
+always @(state_q or pass_hash or exp_hash) begin
+    pass_check = 0;
+    case(state_q)
+        PASS_CHK_VALID: begin
+            if(pass_hash == exp_hash)
+                pass_check = 1;
+            else
+                pass_check = 0;
+        end
+        default: pass_check = 0;
+    endcase
+end
+
+// Counter logic
+always @(posedge clk_i or negedge rst_ni) begin
+    if(~rst_ni)
+        miss_pass_check_cnt_q <= 0;
+    else if(pass_check)
+        miss_pass_check_cnt_q <= 0;
+    else if(state_q == LOCK)
+        miss_pass_check_cnt_q <= miss_pass_check_cnt_q + 1;
+end
+
+endmodule

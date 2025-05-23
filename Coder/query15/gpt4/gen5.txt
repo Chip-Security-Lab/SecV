@@ -1,0 +1,50 @@
+module sha256_wrapper(
+    input wire clk_i,
+    input wire rst_ni,
+    input wire rst_3,
+    input wire [7:0] wdata,
+    input wire [1:0] addr,
+    input wire we,
+    input wire hashValid,
+    output reg startHash,
+    output reg [7:0] data0,
+    output reg [7:0] data1,
+    output reg [7:0] data2,
+    output reg [7:0] data3
+);
+    reg hashValid_r;
+
+    always @(posedge clk_i) begin
+        // Edge detection for hashValid
+        hashValid_r <= hashValid;
+    end
+
+    always @(posedge clk_i or negedge rst_ni or negedge rst_3) begin
+        if (!rst_ni || !rst_3) begin
+            // Reset condition, clear all data registers and startHash
+            data0 <= 8'b0;
+            data1 <= 8'b0;
+            data2 <= 8'b0;
+            data3 <= 8'b0;
+            startHash <= 1'b0;
+        end else if (hashValid_r == 0 && hashValid == 1) begin
+            // Clear on hash completion activated only if hashValid signal transitions from 0 to 1.
+            data0 <= 8'b0;
+            data1 <= 8'b0;
+            data2 <= 8'b0;
+            data3 <= 8'b0;
+        end else if (we) begin
+            // Write operation based on address decoding
+            case (addr)
+                2'b00: begin
+                    data0 <= wdata;
+                    startHash <= wdata[0];
+                end
+                2'b01: data1 <= wdata;
+                2'b10: data2 <= wdata;
+                2'b11: data3 <= wdata;
+            endcase
+        end
+    end
+
+endmodule

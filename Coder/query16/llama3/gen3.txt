@@ -1,0 +1,60 @@
+module jtag_auth_good(
+    input wire clk_i,
+    input wire rst_ni,
+    input wire [31:0] pass_hash,
+    input wire [31:0] exp_hash,
+    input wire hashValid,
+    output reg pass_check,
+    output reg [1:0] state_q,
+    output reg [1:0] state_d,
+    output reg [2:0] miss_pass_check_cnt_q
+);
+
+    parameter LOCK_THRESHOLD = 3;
+
+    localparam IDLE = 2'b00;
+    localparam PASS_CHK_VALID = 2'b01;
+    localparam LOCK_STATE = 2'b10;
+
+    always @(posedge clk_i or negedge rst_ni) begin
+        if (~rst_ni) begin
+            state_q <= IDLE;
+            pass_check <= 0;
+            miss_pass_check_cnt_q <= 0;
+        end else begin
+            state_q <= state_d;
+            case (state_q)
+                IDLE: begin
+                    if (hashValid) begin
+                        if (pass_hash == exp_hash) begin
+                            pass_check <= 1;
+                            state_d <= IDLE;
+                        end else begin
+                            miss_pass_check_cnt_q <= miss_pass_check_cnt_q + 1;
+                            state_d <= PASS_CHK_VALID;
+                        end
+                    end
+                end
+                PASS_CHK_VALID: begin
+                    if (hashValid) begin
+                        if (pass_hash == exp_hash) begin
+                            pass_check <= 1;
+                            state_d <= IDLE;
+                            miss_pass_check_cnt_q <= 0;
+                        end else begin
+                            if (miss_pass_check_cnt_q == LOCK_THRESHOLD) begin
+                                state_d <= LOCK_STATE;
+                            end else begin
+                                state_d <= PASS_CHK_VALID;
+                            end
+                        end
+                    end
+                end
+                LOCK_STATE: begin
+                    pass_check <= 0;
+                end
+            endcase
+        end
+    end
+
+endmodule

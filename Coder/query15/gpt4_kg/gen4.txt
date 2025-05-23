@@ -1,0 +1,46 @@
+module sha256_wrapper #(
+    parameter REG_COUNT = 4
+)(
+    input wire clk_i,
+    input wire rst_ni,
+    input wire rst_3,
+    input wire [7:0] wdata,
+    input wire [1:0] addr,
+    input wire we,
+    input wire hashValid,
+    output reg startHash,
+    output reg [7:0] data0,
+    output reg [7:0] data1,
+    output reg [7:0] data2,
+    output reg [7:0] data3
+);
+
+    reg hashValid_r;
+
+    always @(posedge clk_i) begin
+        if (!rst_ni || !rst_3) begin
+            startHash <= 0;
+            data0 <= 0;
+            data1 <= 0;
+            data2 <= 0;
+            data3 <= 0;
+        end else if (hashValid && !hashValid_r) begin
+            data0 <= 0;
+            data1 <= 0;
+            data2 <= 0;
+            data3 <= 0;
+        end else if (we) begin
+            case (addr)
+                2'b00: begin
+                    data0 <= wdata;
+                    startHash <= wdata[0]; 
+                end
+                2'b01: data1 <= wdata;
+                2'b10: data2 <= wdata;
+                2'b11: data3 <= wdata;
+            endcase
+        end
+
+        hashValid_r <= hashValid;
+    end
+endmodule

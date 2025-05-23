@@ -1,0 +1,73 @@
+module jtag_auth_good(
+    input wire clk_i,
+    input wire rst_ni,
+    input wire [31:0] pass_hash,
+    input wire [31:0] exp_hash,
+    input wire hashValid,
+    output wire pass_check,
+    output wire [1:0] state_q,
+    output wire [1:0] state_d,
+    output wire [2:0] miss_pass_check_cnt_q
+);
+  
+  /* FSM State Definitions */
+  localparam IDLE = 2'b00;
+  localparam PASS_CHK_VALID = 2'b01;
+  localparam LOCK = 2'b10;
+
+  /* State Machine Transition Logic */
+  always @(posedge clk_i or negedge rst_ni)
+  begin
+    if (!rst_ni) begin
+      state_q <= IDLE;
+    end 
+    else begin
+      state_q <= state_d;
+    end
+  end
+
+  /* State Machine Next State Logic */
+  always @(*)
+  begin
+    case (state_q)
+      IDLE: begin
+        if (hashValid)
+          state_d = PASS_CHK_VALID;
+        else
+          state_d = IDLE;
+      end
+      
+      PASS_CHK_VALID: begin
+        if (pass_hash == exp_hash) 
+          state_d = IDLE;
+        else
+          state_d = LOCK;
+      end
+
+      LOCK: begin
+        if (rst_ni)
+          state_d = IDLE;
+        else
+          state_d = LOCK;
+      end
+    endcase
+  end
+
+  /* Failed password attempts counter */
+  always @(posedge clk_i or negedge rst_ni)
+  begin
+    if (!rst_ni) begin
+      miss_pass_check_cnt_q <= 3'b000;
+    end 
+    else if (state_q == PASS_CHK_VALID) begin
+      if (pass_hash != exp_hash)
+        miss_pass_check_cnt_q <= miss_pass_check_cnt_q + 1;
+      else
+        miss_pass_check_cnt_q <= 3'b000;
+    end
+  end
+  
+  /* Password Check Logic */
+  assign pass_check = (state_q == PASS_CHK_VALID) && (pass_hash == exp_hash);
+
+endmodule

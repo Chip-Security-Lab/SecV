@@ -1,0 +1,62 @@
+module jtag_auth_good(
+    input wire clk_i,
+    input wire rst_ni,
+    input wire [31:0] pass_hash,
+    input wire [31:0] exp_hash,
+    input wire hashValid,
+    output wire pass_check,
+    output wire [1:0] state_q,
+    output wire [1:0] state_d,
+    output wire miss_pass_check_cnt_q
+);
+
+    parameter IDLE = 2'b00, PASS_CHK_VALID = 2'b01, LOCK = 2'b10;
+
+    reg [1:0] state;
+    reg pass_check_reg;
+    reg [31:0] miss_pass_check_cnt;
+
+    always @(posedge clk_i) begin
+        if (rst_ni == 1'b0) begin
+            state <= IDLE;
+            pass_check_reg <= 1'b0;
+            miss_pass_check_cnt <= 0;
+        end else begin
+            if (state == IDLE && hashValid == 1'b1) begin
+                if (pass_hash == exp_hash) begin
+                    state <= PASS_CHK_VALID;
+                    pass_check_reg <= 1'b1;
+                    miss_pass_check_cnt <= 0;
+                end else begin
+                    // Uncomment the following line if Case 1 is selected
+                    // state <= LOCK;
+                    // pass_check_reg <= 1'b0;
+                    // miss_pass_check_cnt++;
+
+                    // Uncomment the following lines if Case 2 is selected
+                    state <= IDLE;
+                    pass_check_reg <= 1'b0;
+                end
+            end else if (state == PASS_CHK_VALID && hashValid == 1'b1) begin
+                if (pass_hash == exp_hash) begin
+                    pass_check_reg <= 1'b1;
+                end else begin
+                    // Uncomment the following line if Case 1 is selected
+                    // state <= LOCK;
+                    // pass_check_reg <= 1'b0;
+                    // miss_pass_check_cnt++;
+
+                    // Uncomment the following lines if Case 2 is selected
+                    state <= IDLE;
+                    pass_check_reg <= 1'b0;
+                end
+            end
+        end
+    end
+
+    assign state_q = state;
+    assign state_d = state;
+    assign pass_check = pass_check_reg;
+    assign miss_pass_check_cnt_q = miss_pass_check_cnt;
+
+endmodule

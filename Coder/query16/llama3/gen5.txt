@@ -1,0 +1,66 @@
+module jtag_auth_good(
+    input wire clk_i,
+    input wire rst_ni,
+    input wire [31:0] pass_hash,
+    input wire [31:0] exp_hash,
+    input wire hashValid,
+    output reg pass_check,
+    output reg [1:0] state_q,
+    output reg [1:0] state_d,
+    output reg [2:0] miss_pass_check_cnt_q
+);
+
+    parameter LOCK_THRESHOLD = 3;
+
+    always @(posedge clk_i or negedge rst_ni) begin
+        if (~rst_ni) begin
+            state_q <= 2'b00; // Idle
+            pass_check <= 1'b0;
+            miss_pass_check_cnt_q <= 3'b000;
+        end else begin
+            state_q <= state_d;
+            case (state_q)
+                2'b00: begin // Idle
+                    if (hashValid) begin
+                        state_d <= 2'b01; // PassChkValid
+                    end else begin
+                        state_d <= 2'b00; // Idle
+                    end
+                end
+                2'b01: begin // PassChkValid
+                    if (pass_hash == exp_hash) begin
+                        pass_check <= 1'b1;
+                        state_d <= 2'b00; // Idle
+                        miss_pass_check_cnt_q <= 3'b000;
+                    end else begin
+                        pass_check <= 1'b0;
+                        state_d <= 2'b10; // Lock
+                        miss_pass_check_cnt_q <= miss_pass_check_cnt_q + 1;
+                    end
+                end
+                2'b10: begin // Lock
+                    if (~hashValid) begin
+                        state_d <= 2'b00; // Idle
+                    end else begin
+                        state_d <= 2'b10; // Lock
+                    end
+                end
+            endcase
+        end
+    end
+
+    always @(state_q) begin
+        case (state_q)
+            2'b00: state_d <= 2'b00; // Idle
+            2'b01: state_d <= 2'b01; // PassChkValid
+            2'b10: state_d <= 2'b10; // Lock
+        endcase
+    end
+
+    always @(state_q, miss_pass_check_cnt_q) begin
+        if (state_q == 2'b10 && miss_pass_check_cnt_q >= LOCK_THRESHOLD) begin
+            pass_check <= 1'b0;
+        end
+    end
+
+endmodule

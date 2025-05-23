@@ -1,0 +1,75 @@
+module jtag_auth_good(
+  input wire clk_i,
+  input wire rst_ni,
+  input wire [31:0] pass_hash,
+  input wire [31:0] exp_hash,
+  input wire hashValid,
+  output reg pass_check,
+  output reg [1:0] state_q,
+  output reg [1:0] state_d,
+  output reg [3:0] miss_pass_check_cnt_q
+);
+
+  // FSM States
+  localparam Idle = 2'b00;
+  localparam PassChkValid = 2'b01;
+  localparam Lock = 2'b10;
+
+  // Password Attempt Behavior
+  // Case 1: Restricted Attempts with Locking
+  // localparam MAX_FAILED_ATTEMPTS = 3;
+  // reg [3:0] miss_pass_check_cnt_q;
+  // always @(posedge clk_i or negedge rst_ni) begin
+  //   if (!rst_ni) begin
+  //     miss_pass_check_cnt_q <= 0;
+  //   end else if (pass_check && (miss_pass_check_cnt_q == MAX_FAILED_ATTEMPTS)) begin
+  //     state_d <= Lock;
+  //   end else if (pass_check) begin
+  //     miss_pass_check_cnt_q <= 0;
+  //   end else if (!pass_check) begin
+  //     miss_pass_check_cnt_q <= miss_pass_check_cnt_q + 1;
+  //   end
+  // end
+
+  // Case 2: Unrestricted Attempts
+  always @(posedge clk_i or negedge rst_ni) begin
+    if (!rst_ni) begin
+      state_q <= Idle;
+      pass_check <= 0;
+      miss_pass_check_cnt_q <= 0;
+    end else begin
+      case (state_q)
+        Idle: begin
+          if (hashValid) begin
+            state_d <= PassChkValid;
+          end
+        end
+        PassChkValid: begin
+          if (pass_hash == exp_hash) begin
+            pass_check <= 1;
+            state_d <= Idle;
+          end else begin
+            pass_check <= 0;
+            state_d <= Idle;
+          end
+        end
+        Lock: begin
+          pass_check <= 0;
+          state_d <= Idle;
+        end
+      endcase
+    end
+  end
+
+  // Reset Behavior
+  always @(posedge clk_i or negedge rst_ni) begin
+    if (!rst_ni) begin
+      state_q <= Idle;
+      pass_check <= 0;
+      miss_pass_check_cnt_q <= 0;
+    end else begin
+      state_q <= state_d;
+    end
+  end
+
+endmodule

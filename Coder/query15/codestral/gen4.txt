@@ -1,0 +1,64 @@
+module sha256_wrapper(
+    input wire clk_i,
+    input wire rst_ni,
+    input wire rst_3,
+    input wire [7:0] wdata,
+    input wire [1:0] addr,
+    input wire we,
+    input wire hashValid,
+    output wire startHash,
+    output reg [7:0] data0,
+    output reg [7:0] data1,
+    output reg [7:0] data2,
+    output reg [7:0] data3
+);
+
+    reg [7:0] data0_r;
+    reg [7:0] data1_r;
+    reg [7:0] data2_r;
+    reg [7:0] data3_r;
+    reg startHash_r;
+    reg clearData;
+
+    always @(posedge clk_i or posedge rst_ni or posedge rst_3) begin
+        if (~rst_ni || ~rst_3) begin
+            data0_r <= 0;
+            data1_r <= 0;
+            data2_r <= 0;
+            data3_r <= 0;
+            startHash_r <= 0;
+            clearData <= 1'b0;
+        end else begin
+            if (hashValid && !clearData) begin
+                data0_r <= 0;
+                data1_r <= 0;
+                data2_r <= 0;
+                data3_r <= 0;
+                startHash_r <= 0;
+                clearData <= 1'b1;
+            end
+        end
+    end
+
+    always @(posedge clk_i) begin
+        if (we) begin
+            case (addr)
+                2'b00: begin
+                    data0_r <= wdata;
+                    startHash_r <= wdata[0];
+                end
+                2'b01: data1_r <= wdata;
+                2'b10: data2_r <= wdata;
+                2'b11: data3_r <= wdata;
+                default:
+            endcase
+        end
+    end
+
+    assign data0 = data0_r;
+    assign data1 = data1_r;
+    assign data2 = data2_r;
+    assign data3 = data3_r;
+    assign startHash = startHash_r;
+
+endmodule
