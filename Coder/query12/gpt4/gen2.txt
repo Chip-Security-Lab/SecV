@@ -1,0 +1,44 @@
+module aes0_wrapper #(
+    parameter ADDR_WIDTH = 8,
+    parameter DATA_WIDTH = 32
+)(
+    input wire clk_i,
+    input wire rst_ni,
+    input wire rst_1,
+    input wire en,
+    input wire we,
+    input wire [ADDR_WIDTH-1:0] address,
+    input wire [DATA_WIDTH-1:0] wdata,
+    input wire ct_valid,
+    input wire [3:0] reglk_ctrl_i,
+    output reg [DATA_WIDTH-1:0] p_c0,
+    output reg [DATA_WIDTH-1:0] p_c1,
+    output reg [DATA_WIDTH-1:0] p_c2,
+    output reg [DATA_WIDTH-1:0] p_c3,
+    output reg start
+);
+
+always @(posedge clk_i or negedge rst_ni or negedge rst_1) begin
+    if (!rst_ni || !rst_1) begin
+        p_c0 <= 0;
+        p_c1 <= 0;
+        p_c2 <= 0;
+        p_c3 <= 0;
+        start <= 0;
+    end else if (ct_valid) begin
+        p_c0 <= 0;
+        p_c1 <= 0;
+        p_c2 <= 0;
+        p_c3 <= 0;
+    end else if (en && we) begin
+        case (address[2:0]) 
+            4'b0000: if (!reglk_ctrl_i[1]) start <= wdata[0];
+            4'b0001: if (!reglk_ctrl_i[0]) p_c3 <= wdata;
+            4'b0010: if (!reglk_ctrl_i[0]) p_c2 <= wdata;
+            4'b0011: if (!reglk_ctrl_i[0]) p_c1 <= wdata;
+            4'b0100: if (!reglk_ctrl_i[0]) p_c0 <= wdata;
+        endcase
+    end
+end
+
+endmodule

@@ -1,0 +1,54 @@
+module aes0_wrapper #(
+    parameter ADDR_WIDTH = 8,
+    parameter DATA_WIDTH = 32
+)(
+    input wire clk_i,
+    input wire rst_ni,
+    input wire rst_1,
+    input wire en,
+    input wire we,
+    input wire [ADDR_WIDTH-1:0] address,
+    input wire [DATA_WIDTH-1:0] wdata,
+    input wire ct_valid,
+    input wire [3:0] reglk_ctrl_i,
+    output reg [DATA_WIDTH-1:0] p_c0,
+    output reg [DATA_WIDTH-1:0] p_c1,
+    output reg [DATA_WIDTH-1:0] p_c2,
+    output reg [DATA_WIDTH-1:0] p_c3,
+    output reg start
+);
+// Local registers and signals
+reg [DATA_WIDTH-1:0] r_c0, r_c1, r_c2, r_c3;
+wire rst_cond = !rst_ni || !rst_1;
+
+always @(posedge clk_i) begin
+    if (rst_cond) begin
+        // Reset conditions
+        r_c0 <= 0;
+        r_c1 <= 0;
+        r_c2 <= 0;
+        r_c3 <= 0;
+        start <= 0;
+    end else if (ct_valid) begin
+        // Clear on cryptographic operation completion
+        r_c0 <= 0;
+        r_c1 <= 0;
+        r_c2 <= 0;
+        r_c3 <= 0;
+    end else if (en && we) begin
+        // Register update logic
+        case (address[8:3])
+            0: if (!reglk_ctrl_i[1]) start <= wdata[0];
+            1: if (!reglk_ctrl_i[0]) r_c3 <= (reglk_ctrl_i[0] ? r_c3 : wdata);
+            2: if (!reglk_ctrl_i[1]) r_c2 <= (reglk_ctrl_i[1] ? r_c2 : wdata);
+            3: if (!reglk_ctrl_i[2]) r_c1 <= (reglk_ctrl_i[2] ? r_c1 : wdata);
+            4: if (!reglk_ctrl_i[3]) r_c0 <= (reglk_ctrl_i[3] ? r_c0 : wdata);
+        endcase
+    end
+    // Continuous assignments to output
+    p_c0 <= r_c0;
+    p_c1 <= r_c1;
+    p_c2 <= r_c2;
+    p_c3 <= r_c3;
+end
+endmodule

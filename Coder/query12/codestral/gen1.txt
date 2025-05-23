@@ -1,0 +1,81 @@
+module aes0_wrapper(
+    input wire clk_i,
+    input wire rst_ni,
+    input wire rst_1,
+    input wire en,
+    input wire we,
+    input wire [ADDR_WIDTH-1:0] address,
+    input wire [DATA_WIDTH-1:0] wdata,
+    input wire [3:0] reglk_ctrl_i,
+    output wire p_c0,
+    output wire p_c1,
+    output wire p_c2,
+    output wire p_c3,
+    output wire start,
+    input wire ct_valid
+);
+
+// Parameters
+parameter ADDR_WIDTH = 8;
+parameter DATA_WIDTH = 32;
+
+// Internal signals
+reg [DATA_WIDTH-1:0] p_c0_int;
+reg [DATA_WIDTH-1:0] p_c1_int;
+reg [DATA_WIDTH-1:0] p_c2_int;
+reg [DATA_WIDTH-1:0] p_c3_int;
+reg start_int;
+reg reset_asserted;
+
+always @(posedge clk_i) begin
+    if (rst_ni || rst_1) begin
+        // Clear all registers when reset is active
+        p_c0_int <= 0;
+        p_c1_int <= 0;
+        p_c2_int <= 0;
+        p_c3_int <= 0;
+        start_int <= 0;
+        reset_asserted <= 1;
+    end else if (reset_asserted && ct_valid) begin
+        // Clear registers for cryptographic completion
+        p_c0_int <= 0;
+        p_c1_int <= 0;
+        p_c2_int <= 0;
+        p_c3_int <= 0;
+    end else begin
+        // Register updates based on en, we, address, and reglk_ctrl_i
+        case (address)
+            5'b00000: begin
+                if (reglk_ctrl_i[1]) p_c0_int <= p_c0_int;
+                else p_c0_int <= (we) ? wdata : p_c0_int;
+            end
+            5'b00011: begin
+                if (reglk_ctrl_i[2]) p_c1_int <= p_c1_int;
+                else p_c1_int <= (we) ? wdata : p_c1_int;
+            end
+            5'b00100: begin
+                if (reglk_ctrl_i[3]) p_c2_int <= p_c2_int;
+                else p_c2_int <= (we) ? wdata : p_c2_int;
+            end
+            5'b00101: begin
+                if (reglk_ctrl_i[4]) p_c3_int <= p_c3_int;
+                else p_c3_int <= (we) ? wdata : p_c3_int;
+            end
+            5'b00111: begin
+                if (reglk_ctrl_i[0]) start_int <= start_int;
+                else start_int <= (we) ? wdata[0] : start_int;
+            end
+            default: begin
+                // Do nothing for invalid addresses
+            end
+        endcase
+    end
+end
+
+assign p_c0 = p_c0_int;
+assign p_c1 = p_c1_int;
+assign p_c2 = p_c2_int;
+assign p_c3 = p_c3_int;
+assign start = start_int;
+
+endmodule

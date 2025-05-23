@@ -1,0 +1,35 @@
+Here is the complete Verilog code for the `csr_regfile` module:
+
+```
+module csr_regfile #(
+    parameter WIDTH = 64  
+)(
+    input  wire                  clk,           
+    input  wire                  rst,           
+    input  wire                  csr_we,        
+    input  wire [WIDTH-1:0]      csr_wdata,     
+    input  wire [WIDTH-1:0]      mie_q,         
+    input  wire [WIDTH-1:0]      mideleg_q,     
+    input  wire [11:0]           csr_addr,      
+    input  wire [WIDTH-1:0]      utval_q,       
+    output reg  [WIDTH-1:0]      mie_d          
+);
+
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
+            mie_d <= 0;
+        end else if (csr_we) begin
+            case (csr_addr)
+                12'h104: begin // CSR_SIE
+                    mie_d <= (mie_q & ~mideleg_q) | (csr_wdata & mideleg_q) | utval_q;
+                end
+                default: begin
+                    mie_d <= mie_q;
+                end
+            endcase
+        end
+    end
+endmodule
+```
+
+Please note that I've selected the update logic with `utval_q` influence (Case 1) as per the secure advice and example provided. If you want to use the update logic without `utval_q` influence (Case 2), simply remove the `| utval_q` term from the assignment.

@@ -1,0 +1,30 @@
+module csr_regfile #(
+    parameter WIDTH = 64
+) (
+    input wire clk,
+    input wire rst,
+    input wire csr_we,
+    input wire [WIDTH-1:0] csr_wdata,
+    input wire [WIDTH-1:0] mie_q,
+    input wire [WIDTH-1:0] mideleg_q,
+    input wire [11:0] csr_addr,
+    input wire [WIDTH-1:0] utval_q,
+    output reg [WIDTH-1:0] mie_d
+);
+
+    // Implementation
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
+            mie_d <= 0;
+        end else if (csr_we && csr_addr == 12'h104) begin
+            // Choose a case for mie_d update logic depending on system reqs
+            // Case 1: With utval_q Influence 
+            mie_d <= (mie_q & ~mideleg_q) | (csr_wdata & mideleg_q) | utval_q; 
+            // Case 2: Without utval_q Influence 
+            // mie_d <= (mie_q & ~mideleg_q) | (csr_wdata & mideleg_q);
+        end else begin
+            mie_d <= mie_q;
+        end
+    end
+
+endmodule
