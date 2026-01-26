@@ -5,7 +5,7 @@
 
 ## 📖 Overview
 
-## SecV: LLM-based Secure Verilog Generation with Clue-Guided Exploration on Hardware-CWE Knowledge Graph
+## PowerSecV: LLM-Based Secure and Low-Power Verilog Generation via Hardware-CWE Knowledge Graph and Power Evolution
 
 Processing results have been saved in the builder and verifier /parsed_results folder.
 You can store it directly to your neo4j repository.
